@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28714.193
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Examen de manejo LectO", "Examen de manejo LectO.csproj", "{75FA0555-3C5F-4249-96EE-D6C0A3C14A15}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{75FA0555-3C5F-4249-96EE-D6C0A3C14A15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75FA0555-3C5F-4249-96EE-D6C0A3C14A15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75FA0555-3C5F-4249-96EE-D6C0A3C14A15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75FA0555-3C5F-4249-96EE-D6C0A3C14A15}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F637F1AC-ED68-45C6-9A1B-86D69A3A472A}
+	EndGlobalSection
+EndGlobal
