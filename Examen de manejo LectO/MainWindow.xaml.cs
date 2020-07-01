@@ -23,6 +23,8 @@ namespace Examen_de_manejo_LectO
         public MainWindow()
         {
             InitializeComponent();
+            Cuestionario cuestionario = new Cuestionario();
+            cuestionario.AgregarPregunta("A", "A", "B", "C");
         }
     }
 }
