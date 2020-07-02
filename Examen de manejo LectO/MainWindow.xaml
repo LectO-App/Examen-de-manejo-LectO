@@ -7,6 +7,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Frame x:Name="MainFrame" Grid.IsSharedSizeScope="True" NavigationUIVisibility="Hidden"/>
+        <!--
+        <Button Width="200" Height="100" Click="Button_Click">
+            Ir a página de preguntas
+        </Button>
+        -->
     </Grid>
 </Window>

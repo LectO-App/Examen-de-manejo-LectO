@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Examen_de_manejo_LectO.Pages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,13 @@ namespace Examen_de_manejo_LectO
     /// </summary>
     public partial class MainWindow : Window
     {
+        Pag_Preguntas preguntas = new Pag_Preguntas();
+
         public MainWindow()
         {
             InitializeComponent();
+            this.WindowState = WindowState.Maximized;
+            MainFrame.Content = preguntas;
             Cuestionario cuestionario = new Cuestionario();
             cuestionario.AgregarPregunta("A", "A", "B", "C");
         }
