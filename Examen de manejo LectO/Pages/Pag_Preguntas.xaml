@@ -11,7 +11,7 @@
     <Grid>
         <Rectangle VerticalAlignment="Top" Fill="#FF6491E9" Height="150"/>
 
-        <Grid Background="#FF6491E9" Height="150" VerticalAlignment="Top" MaxWidth="1200">
+        <Grid Background="#FF6491E9" Height="150" VerticalAlignment="Top" MaxWidth="1200" UseLayoutRounding="True">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="0.1*"/>
                 <ColumnDefinition Width="{Binding ActualHeight, ElementName=btn}"/>
@@ -76,7 +76,7 @@
                     </Style>
                 </Button.Resources>
             </Button>
-            
+
             <Button Cursor="Hand" BorderThickness="0" Grid.Column="5" Grid.Row="1">
                 <TextBlock Foreground="#5F5F5F" FontSize="30" Text="3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 <Button.Effect>
@@ -88,7 +88,7 @@
                     </Style>
                 </Button.Resources>
             </Button>
-            
+
             <Button Cursor="Hand" BorderThickness="0" Grid.Column="7" Grid.Row="1">
                 <TextBlock Foreground="#5F5F5F" FontSize="30" Text="4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 <Button.Effect>
@@ -112,7 +112,7 @@
                     </Style>
                 </Button.Resources>
             </Button>
-            
+
             <Button Cursor="Hand" BorderThickness="0" Grid.Column="11" Grid.Row="1">
                 <TextBlock Foreground="#5F5F5F" FontSize="30" Text="6" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 <Button.Effect>
@@ -124,7 +124,7 @@
                     </Style>
                 </Button.Resources>
             </Button>
-            
+
             <Button Cursor="Hand" BorderThickness="0" Grid.Column="13" Grid.Row="1">
                 <TextBlock Foreground="#5F5F5F" FontSize="30" Text="7" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 <Button.Effect>
@@ -136,7 +136,7 @@
                     </Style>
                 </Button.Resources>
             </Button>
-            
+
             <Button Cursor="Hand" BorderThickness="0" Grid.Column="15" Grid.Row="1">
                 <TextBlock Foreground="#5F5F5F" FontSize="30" Text="8" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 <Button.Effect>
@@ -148,7 +148,7 @@
                     </Style>
                 </Button.Resources>
             </Button>
-            
+
             <Button Cursor="Hand" BorderThickness="0" Grid.Column="17" Grid.Row="1">
                 <TextBlock Foreground="#5F5F5F" FontSize="30" Text="9" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 <Button.Effect>
@@ -160,7 +160,7 @@
                     </Style>
                 </Button.Resources>
             </Button>
-            
+
             <Button Cursor="Hand" BorderThickness="0" Grid.Column="19" Grid.Row="1">
                 <TextBlock Foreground="#5F5F5F" FontSize="30" Text="10" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 <Button.Effect>
@@ -367,6 +367,31 @@
                     </Style>
                 </Button.Resources>
             </Button>
+        </Grid>
+
+        <Grid Margin="0,150,0,0">
+
+            <Button HorizontalAlignment="Left" Height="90" Margin="586,0,0,36" VerticalAlignment="Bottom" Width="90" Background="#FF779BF9" BorderBrush="{x:Null}" Foreground="{x:Null}">
+                <StackPanel>
+                    <Image Width="60" Source="/Examen de manejo LectO;component/Resources/FlechaLeft.png"/>
+                </StackPanel>
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="6"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button HorizontalAlignment="Left" Height="90" Margin="962,0,0,36" VerticalAlignment="Bottom" Width="90" BorderBrush="{x:Null}" Background="#FF779BF9" Foreground="{x:Null}">
+                <StackPanel>
+                    <Image Width="60" Source="/Examen de manejo LectO;component/Resources/FlechaRight.png"/>
+                </StackPanel>
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="6"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+
         </Grid>
     </Grid>
 </Page>
