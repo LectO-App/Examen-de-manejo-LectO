@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Examen_de_manejo_LectO.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="1631.5" d:DesignWidth="1741.5"
+      d:DesignHeight="807" d:DesignWidth="1353"
       Title="Pag_Preguntas" Background="White" FontFamily="OpenDyslexic">
 
     <Grid>
@@ -370,28 +370,92 @@
         </Grid>
 
         <Grid Margin="0,150,0,0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition Width="1*" MinWidth="320"/>
+                </Grid.ColumnDefinitions>
 
-            <Button HorizontalAlignment="Left" Height="90" Margin="586,0,0,36" VerticalAlignment="Bottom" Width="90" Background="#FF779BF9" BorderBrush="{x:Null}" Foreground="{x:Null}">
-                <StackPanel>
-                    <Image Width="60" Source="/Examen de manejo LectO;component/Resources/FlechaLeft.png"/>
-                </StackPanel>
-                <Button.Resources>
-                    <Style TargetType="Border">
-                        <Setter Property="CornerRadius" Value="6"/>
-                    </Style>
-                </Button.Resources>
-            </Button>
-            <Button HorizontalAlignment="Left" Height="90" Margin="962,0,0,36" VerticalAlignment="Bottom" Width="90" BorderBrush="{x:Null}" Background="#FF779BF9" Foreground="{x:Null}">
-                <StackPanel>
-                    <Image Width="60" Source="/Examen de manejo LectO;component/Resources/FlechaRight.png"/>
-                </StackPanel>
-                <Button.Resources>
-                    <Style TargetType="Border">
-                        <Setter Property="CornerRadius" Value="6"/>
-                    </Style>
-                </Button.Resources>
-            </Button>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="150"/>
+                </Grid.RowDefinitions>
 
+                <StackPanel Orientation="Vertical" Margin="50,50,50,0" Grid.Column="1" Grid.RowSpan="2">
+                    <Viewbox>
+                        <Button Background="#6BDDED" BorderThickness="0" Width="230" Height="60" Margin="0,0,0,20" Cursor="Hand">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock VerticalAlignment="Center" FontSize="25" Margin="0,0,7,0">Leer todo</TextBlock>
+                                <Image Source="/Examen de manejo LectO;component/Resources/Audio.png" Margin="7,0,0,0" Width="50" Opacity="0.7"></Image>
+                            </StackPanel>
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="7"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                    </Viewbox>
+                    <Viewbox>
+                        <Button Background="#B2C5F5" BorderThickness="0" Width="230" Height="60" Margin="0,20,0,0" Cursor="Hand">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock VerticalAlignment="Center" FontSize="25" Margin="0,0,7,0">Terminar</TextBlock>
+                                <Image Source="/Examen de manejo LectO;component/Resources/FlechaRight.png" Margin="7,0,0,0" Width="50" Opacity="0.7"></Image>
+                            </StackPanel>
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="7"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                    </Viewbox>
+                </StackPanel>
+
+                <!--
+                <StackPanel Grid.Column="0" Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top">
+                    <Image Margin="0,0,30,0" Source="/Examen de manejo LectO;component/Resources/Audio.png" Width="50" Opacity="0.7"></Image>
+                    <TextBlock FontSize="40">01.</TextBlock>
+                    <TextBox FontSize="50" Height="500" TextWrapping="Wrap">
+                        Para conducir un turismo con un remolque de menos de 750 Kg. de M.M.A., ¿qué permiso, al menos, se necesita?
+                    </TextBox>
+                </StackPanel>
+                -->
+
+                <Grid Grid.Column="0" Grid.Row="0" Margin="50,50,0,0" HorizontalAlignment="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,50,0">
+                        <Image Margin="0,0,30,0" Source="/Examen de manejo LectO;component/Resources/Audio.png" Width="50" Opacity="0.7"></Image>
+                        <TextBlock FontSize="30">01.</TextBlock>
+                    </StackPanel>
+
+                    <TextBox Grid.Column="1" MaxHeight="200" FontSize="30" HorizontalAlignment="Left" TextAlignment="Center" TextWrapping="Wrap" BorderThickness="0" VerticalScrollBarVisibility="Auto" IsInactiveSelectionHighlightEnabled="True" VerticalAlignment="Top">
+                        Para conducir un turismo con un remolque de menos de 750 Kg. de M.M.A., ¿qué permiso, al menos, se necesita?
+                    </TextBox>
+
+                </Grid>
+
+                <StackPanel Grid.Column="0" Margin="0,30,0,30" Grid.ColumnSpan="2" Grid.Row="1" HorizontalAlignment="Center" Orientation="Horizontal">
+                    <Button Margin="0,0,50,0" BorderBrush="{x:Null}" BorderThickness="0" Background="#FF779BF9" Foreground="{x:Null}" Cursor="Hand">
+                        <Image Margin="10,10,10,10" Source="/Examen de manejo LectO;component/Resources/FlechaLeft.png"/>
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="6"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Margin="50,0,0,0" BorderBrush="{x:Null}" BorderThickness="0" Background="#FF779BF9" Foreground="{x:Null}" Cursor="Hand">
+                        <Image Margin="10,10,10,10" Source="/Examen de manejo LectO;component/Resources/FlechaRight.png"/>
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="6"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                </StackPanel>
+            </Grid>
         </Grid>
     </Grid>
 </Page>
