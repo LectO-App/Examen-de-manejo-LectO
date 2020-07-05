@@ -28,8 +28,6 @@ namespace Examen_de_manejo_LectO
             InitializeComponent();
             this.WindowState = WindowState.Maximized;
             MainFrame.Content = preguntas;
-            Cuestionario cuestionario = new Cuestionario();
-            cuestionario.AgregarPregunta("A", "A", "B", "C");
         }
     }
 }
