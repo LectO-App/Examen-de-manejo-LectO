@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Examen_de_manejo_LectO.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="807" d:DesignWidth="1353"
+      d:DesignHeight="1080" d:DesignWidth="1920"
       Title="Pag_Preguntas" Background="White" FontFamily="OpenDyslexic">
 
     <Grid>
@@ -422,11 +422,13 @@
                 </Grid.ColumnDefinitions>
 
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="{Binding ActualHeight, ElementName=stackPanelLeerTerminar}"/>
                     <RowDefinition/>
                     <RowDefinition Height="150"/>
                 </Grid.RowDefinitions>
 
-                <StackPanel Orientation="Vertical" Margin="50,50,50,0" Grid.Column="1" Grid.RowSpan="2">
+                <StackPanel x:Name="stackPanelLeerTerminar"  Orientation="Vertical" Margin="50,50,50,0" Grid.Column="1" Grid.RowSpan="2" VerticalAlignment="Top">
                     <Viewbox>
                         <Button Background="#6BDDED" BorderThickness="0" Width="230" Height="60" Margin="0,0,0,20" Cursor="Hand">
                             <StackPanel Orientation="Horizontal">
@@ -455,17 +457,7 @@
                     </Viewbox>
                 </StackPanel>
 
-                <!--
-                <StackPanel Grid.Column="0" Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top">
-                    <Image Margin="0,0,30,0" Source="/Examen de manejo LectO;component/Resources/Audio.png" Width="50" Opacity="0.7"></Image>
-                    <TextBlock FontSize="40">01.</TextBlock>
-                    <TextBox FontSize="50" Height="500" TextWrapping="Wrap">
-                        Para conducir un turismo con un remolque de menos de 750 Kg. de M.M.A., ¿qué permiso, al menos, se necesita?
-                    </TextBox>
-                </StackPanel>
-                -->
-
-                <Grid Grid.Column="0" Grid.Row="0" Margin="50,50,0,0" HorizontalAlignment="Center">
+                <Grid Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Margin="50,50,0,0" HorizontalAlignment="Center">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="200"/>
                         <ColumnDefinition/>
@@ -477,12 +469,64 @@
                     </StackPanel>
 
                     <TextBox Grid.Column="1" MaxHeight="200" FontSize="30" HorizontalAlignment="Left" TextAlignment="Center" TextWrapping="Wrap" BorderThickness="0" VerticalScrollBarVisibility="Auto" IsInactiveSelectionHighlightEnabled="True" VerticalAlignment="Top">
-                        Para conducir un turismo con un remolque de menos de 750 Kg. de M.M.A., ¿qué permiso, al menos, se necesita?
+                        ¿Qué vehículos pueden circular por un carril de sentido contrario al habitual, como norma general?
                     </TextBox>
+                </Grid>
+
+                <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" Margin="50,50,50,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" MaxWidth="500"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Image Grid.Column="0" Source="/Examen de manejo LectO;component/Resources/FotoPregunta1.jpg" Stretch="Uniform"></Image>
+
+                    <StackPanel Grid.Column="1" Orientation="Vertical" VerticalAlignment="Center" Margin="50,0,0,0">
+                        <Grid Margin="0,0,0,30">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="120"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Orientation="Horizontal">
+                                <Image Margin="0,0,30,0" Source="/Examen de manejo LectO;component/Resources/Audio.png" Width="50" Opacity="0.7"></Image>
+                                <TextBlock FontSize="30" VerticalAlignment="Center">a</TextBlock>
+                            </StackPanel>
+                            <TextBox Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="30" BorderThickness="0">Turismos y motocicletas</TextBox>
+                        </Grid>
+
+                        <Grid Margin="0,30,0,30">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="120"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Orientation="Horizontal">
+                                <Image Margin="0,0,30,0" Source="/Examen de manejo LectO;component/Resources/Audio.png" Width="50" Opacity="0.7"></Image>
+                                <TextBlock FontSize="30" VerticalAlignment="Center">b</TextBlock>
+                            </StackPanel>
+                            <TextBox Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="30" BorderThickness="0">Cualquier vehículo</TextBox>
+                        </Grid>
+
+                        <Grid Margin="0,30,0,30">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="120"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Orientation="Horizontal">
+                                <Image Margin="0,0,30,0" Source="/Examen de manejo LectO;component/Resources/Audio.png" Width="50" Opacity="0.7"></Image>
+                                <TextBlock FontSize="30" VerticalAlignment="Center">c</TextBlock>
+                            </StackPanel>
+
+                            <TextBox Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="30" BorderThickness="0">Turismos, con o sin remolque, y motocicletas</TextBox>
+
+                        </Grid>
+                    </StackPanel>
 
                 </Grid>
 
-                <StackPanel Grid.Column="0" Margin="0,30,0,30" Grid.ColumnSpan="2" Grid.Row="1" HorizontalAlignment="Center" Orientation="Horizontal">
+                <StackPanel Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="3" Margin="0,30,0,30" HorizontalAlignment="Center" Orientation="Horizontal">
                     <Button Margin="0,0,50,0" BorderBrush="{x:Null}" BorderThickness="0" Background="#FF779BF9" Foreground="{x:Null}" Cursor="Hand">
                         <Image Margin="10,10,10,10" Source="/Examen de manejo LectO;component/Resources/FlechaLeft.png"/>
                         <Button.Resources>
