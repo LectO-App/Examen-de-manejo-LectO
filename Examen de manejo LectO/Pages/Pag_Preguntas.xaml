@@ -9,7 +9,7 @@
       Title="Pag_Preguntas" Background="White" FontFamily="OpenDyslexic">
 
     <Page.Resources>
-        
+
         <Style x:Key="MyButton" TargetType="Button">
             <Setter Property="OverridesDefaultStyle" Value="True" />
             <Setter Property="Cursor" Value="Hand" />
@@ -29,7 +29,7 @@
             </Setter>
         </Style>
     </Page.Resources>
-    
+
     <Grid>
         <Rectangle VerticalAlignment="Top" Fill="#FF6491E9" Height="150"/>
 
@@ -545,6 +545,15 @@
                         </Button.Resources>
                     </Button>
                 </StackPanel>
+            
+                <Grid Grid.Row="3" Grid.RowSpan="1" Grid.Column="1" HorizontalAlignment="Center">
+                    <StackPanel Width="200" Orientation="Vertical" VerticalAlignment="Bottom" Margin="0,0,0,30" Height="100">
+                        <TextBlock FontSize="20" TextAlignment="Center" Height="36">Tiempo restante</TextBlock>
+                        <TextBox BorderThickness="1.5" FontSize="60" TextAlignment="Center" FontFamily="DS-Digital">12:00</TextBox>
+                    
+                </StackPanel>
+                </Grid>
+                
             </Grid>
         </Grid>
     </Grid>
