@@ -23,7 +23,7 @@ namespace Examen_de_manejo_LectO
 
         public Cuestionario()
         {
-            if (!File.Exists("db.json")) { MessageBox.Show("No existe base de datos de pregunta. Se intentará de recuperarla online."); UpdateDB(); }
+            Task.Run(UpdateDB).Wait();
             preguntasExamen = new List<PreguntaRandomizada>();
 
             string str = File.ReadAllText("db.json");
@@ -65,7 +65,7 @@ namespace Examen_de_manejo_LectO
 
             PreguntaRandomizada estaPregunta = preguntasExamen[numeroPregunta];
 
-            imagen = new Bitmap(estaPregunta.imagen);
+            imagen = new Bitmap("Images/" + estaPregunta.imagen + ".png");
             respondida = estaPregunta.respondido;
 
             listaPregunta = new List<string>();
@@ -104,7 +104,8 @@ namespace Examen_de_manejo_LectO
         public async Task SendJson (string json, string url)
         {
             HttpClient client = new HttpClient();
-            var response = await client.PostAsync(url, new StringContent(json, Encoding.UTF8, "text/json"));
+            var response = await client.PostAsync(url, new StringContent(json, Encoding.UTF8, "application/json"));
+            if (response.StatusCode != HttpStatusCode.OK) MessageBox.Show("No se envió correctamente la prueba. Contacta a un administrador.");
         }
 
         public static async Task UpdateDB()
@@ -143,6 +144,8 @@ namespace Examen_de_manejo_LectO
                                 stream.Close();
                             }
                         }
+
+                        if (pregunta.textoPregunta == null) pregunta.textoPregunta = "¿?";
                     }
                 }
 

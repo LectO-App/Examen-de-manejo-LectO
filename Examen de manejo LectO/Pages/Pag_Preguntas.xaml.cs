@@ -20,9 +20,11 @@ namespace Examen_de_manejo_LectO.Pages
     /// </summary>
     public partial class Pag_Preguntas : Page
     {
+        Cuestionario cuestionario;
         public Pag_Preguntas()
         {
             InitializeComponent();
+            cuestionario = new Cuestionario();
         }
     }
 }
