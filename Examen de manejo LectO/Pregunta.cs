@@ -7,20 +7,32 @@ using System.Threading.Tasks;
 
 namespace Examen_de_manejo_LectO
 {
+
     public class Pregunta
     {
-        public int Id { get; set; }
-        public string TextoPregunta { get; set; }
-        public string Imagen { get; set; }
-        public string RespuestaCorrecta { get; set; }
-        public string Opcion1 { get; set; }
-        public string Opcion2 { get; set; }
+        public int id { get; set; }
+        public string textoPregunta { get; set; }
+        public string imagen { get; set; }
+        public string respuestaCorrecta { get; set; }
+        public string opcion1 { get; set; }
+        public string opcion2 { get; set; }
     }
 
     public class Opcion
     {
         public string texto { get; set; }
         public bool esCorrecto { get; set; }
+    }
+
+    public class Examen
+    {
+        public string titulo { get; set; }
+        public List<Pregunta> preguntas { get; set; }
+    }
+
+    public class DB
+    {
+        public List<Examen> examenes { get; set; }
     }
 
     public class PreguntaRandomizada
@@ -45,6 +57,7 @@ namespace Examen_de_manejo_LectO
         public int totalPreguntas { get; set; }
         public List<PreguntaRandomizada> preguntas { get; set; }
     }
+
 
     public static class Shuffle
     {

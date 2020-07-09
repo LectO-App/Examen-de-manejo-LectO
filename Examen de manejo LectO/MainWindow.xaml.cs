@@ -26,6 +26,9 @@ namespace Examen_de_manejo_LectO
         public MainWindow()
         {
             InitializeComponent();
+            Cuestionario.UpdateDB();
+            Cuestionario cuestionario = new Cuestionario();
+            cuestionario.terminar("1204234", "Prueba");
             this.WindowState = WindowState.Maximized;
             MainFrame.Content = preguntas;
         }

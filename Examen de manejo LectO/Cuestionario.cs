@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 using System.Drawing;
 using Newtonsoft.Json;
 using LiteDB;
+using System.Net.Cache;
+using System.Net;
+using System.Net.Http;
+using System.Windows;
 
 namespace Examen_de_manejo_LectO
 {
@@ -17,38 +21,40 @@ namespace Examen_de_manejo_LectO
         List<PreguntaRandomizada> preguntasExamen;
         int cantidadPreguntas;
 
-        public Cuestionario(int cantidad = 30)
+        public Cuestionario()
         {
-            cantidadPreguntas = cantidad;
-
+            if (!File.Exists("db.json")) { MessageBox.Show("No existe base de datos de pregunta. Se intentará de recuperarla online."); UpdateDB(); }
             preguntasExamen = new List<PreguntaRandomizada>();
-            List<Pregunta> todasPreguntas = preguntas.FindAll().ToList();
-            
-            Shuffle.List(ref todasPreguntas);
 
-            for (int i = 0, index = 0; i < cantidad; i++)
+            string str = File.ReadAllText("db.json");
+            DB db = JsonConvert.DeserializeObject<DB>(str);
+
+            int cantidadExamenes = db.examenes.Count;
+            Random random = new Random();
+            int examen = random.Next(cantidadExamenes);
+            cantidadPreguntas = db.examenes[examen].preguntas.Count;
+
+
+            for (int i = 0; i < db.examenes[examen].preguntas.Count; i++)
             {
                 PreguntaRandomizada actual = new PreguntaRandomizada();
-                Pregunta elemento = todasPreguntas[index];
+                Pregunta elemento = db.examenes[examen].preguntas[i];
 
                 List <Opcion> temp = new List<Opcion>()
                 {
-                    new Opcion {texto = elemento.RespuestaCorrecta, esCorrecto = true},
-                    new Opcion {texto = elemento.Opcion1, esCorrecto = false},
-                    new Opcion {texto = elemento.Opcion2, esCorrecto = false},
+                    new Opcion {texto = elemento.respuestaCorrecta, esCorrecto = true},
+                    new Opcion {texto = elemento.opcion1, esCorrecto = false},
+                    new Opcion {texto = elemento.opcion2, esCorrecto = false},
                 };
 
                 Shuffle.List(ref temp);
 
                 preguntasExamen.Add(new PreguntaRandomizada
                 {
-                    pregunta = elemento.TextoPregunta,
+                    pregunta = elemento.textoPregunta,
                     opciones = temp,
-                    imagen = elemento.Imagen
+                    imagen = elemento.imagen
                 });
-
-                index++;
-                if (index == todasPreguntas.Count) index = 0;
             }
         }
 
@@ -77,13 +83,13 @@ namespace Examen_de_manejo_LectO
             preguntasExamen[numeroPregunta].respondido = opcion;
         }
 
-        public void terminar (string documento, string nombreUsuario)
+        public void terminar (string numeroDocumento, string nombreUsuario)
         {
             int respuestasCorrectas = 0;
             foreach (var g in preguntasExamen) if (g.respondido > 0 && g.opciones[g.respondido - 1].esCorrecto) respuestasCorrectas++;
             Resultado resultado = new Resultado
             {
-                numeroDocumento = documento,
+                numeroDocumento = numeroDocumento,
                 nombre = nombreUsuario,
                 aciertos = respuestasCorrectas,
                 totalPreguntas = cantidadPreguntas,
@@ -92,34 +98,121 @@ namespace Examen_de_manejo_LectO
 
             string json = JsonConvert.SerializeObject(resultado);
             File.WriteAllText("resultado.json",json);
+            SendJson(json, "https://lecto-api.herokuapp.com/api/results");
         }
 
-
-        // A partir de acá elementos estáticos
-        static LiteDatabase db = new LiteDatabase("Filename=database.db; Mode=Exclusive");
-        static ILiteCollection<Pregunta> preguntas = db.GetCollection<Pregunta>("preguntas");
-
-        public static void AgregarPregunta (string pregunta, string respuestaCorrecta, string opcion1, string opcion2, string direccionImagen)
+        public async Task SendJson (string json, string url)
         {
-            Bitmap bitmap = new Bitmap(direccionImagen);
+            HttpClient client = new HttpClient();
+            var response = await client.PostAsync(url, new StringContent(json, Encoding.UTF8, "text/json"));
+        }
 
-            if (!Directory.Exists("Imagenes")) Directory.CreateDirectory("Imagenes");
-
-            int i = 0; for (; File.Exists("Imagenes/" + i + ".png"); i++) continue;
-
-            string idImagen = "Imagenes/" + i + ".png";
-            bitmap.Save(idImagen);
-
-            Pregunta agregar = new Pregunta
+        public static async Task UpdateDB()
+        {
+            try
             {
-                TextoPregunta = pregunta,
-                Imagen = idImagen,
-                RespuestaCorrecta = respuestaCorrecta,
-                Opcion1 = opcion1,
-                Opcion2 = opcion2
-            };
+                HttpClient client = new HttpClient();
+                WebClient wclient = new WebClient();
 
-            string id = preguntas.Insert(agregar);
+                string result = await client.GetStringAsync("https://lecto-api.herokuapp.com/api/exams");
+                result = "{\"examenes\":" + result + "}"; 
+                DB db = JsonConvert.DeserializeObject<DB>(result);
+
+                if (!Directory.Exists("Images")) Directory.CreateDirectory("Images");
+
+                foreach (Examen examen in db.examenes)
+                {
+                    foreach (Pregunta pregunta in examen.preguntas)
+                    {
+                        if (pregunta.imagen != null)
+                        {
+                            string url = pregunta.imagen;
+                            for (int i = 0; i < pregunta.imagen.Length; i++) if (pregunta.imagen[i] == '/' || pregunta.imagen[i] == ':') pregunta.imagen = pregunta.imagen.Remove(i--, 1);
+
+                            if (!File.Exists("Images/" + pregunta.imagen + ".png"))
+                            {
+                                Stream stream = wclient.OpenRead(url);
+                                Bitmap bitmap = new Bitmap(stream);
+
+                                if (bitmap != null)
+                                {
+                                    bitmap.Save("Images/" + pregunta.imagen + ".png");
+                                }
+
+                                stream.Flush();
+                                stream.Close();
+                            }
+                        }
+                    }
+                }
+
+                File.WriteAllText("db.json", JsonConvert.SerializeObject(db));
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
         }
     }
 }
+
+/* 
+static LiteDatabase db = new LiteDatabase("Filename=database.db; Mode=Exclusive");
+static ILiteCollection<DB> preguntas = db.GetCollection<DB>("preguntas");
+ public static void AgregarPregunta (string pregunta, string respuestaCorrecta, string opcion1, string opcion2, string direccionImagen)
+{
+    Bitmap bitmap = new Bitmap(direccionImagen);
+
+    if (!Directory.Exists("Imagenes")) Directory.CreateDirectory("Imagenes");
+
+    int i = 0; for (; File.Exists("Imagenes/" + i + ".png"); i++) continue;
+
+    string idImagen = "Imagenes/" + i + ".png";
+    bitmap.Save(idImagen);
+
+    Pregunta agregar = new Pregunta
+    {
+        TextoPregunta = pregunta,
+        Imagen = idImagen,
+        RespuestaCorrecta = respuestaCorrecta,
+        Opcion1 = opcion1,
+        Opcion2 = opcion2
+    };
+
+    string id = preguntas.Insert(agregar);
+} 
+
+public Cuestionario(int cantidad = 30)
+{
+    cantidadPreguntas = cantidad;
+
+    preguntasExamen = new List<PreguntaRandomizada>();
+    List<Pregunta> todasPreguntas = preguntas.FindAll().ToList();
+            
+    Shuffle.List(ref todasPreguntas);
+
+    for (int i = 0, index = 0; i < cantidad; i++)
+    {
+        PreguntaRandomizada actual = new PreguntaRandomizada();
+        Pregunta elemento = todasPreguntas[index];
+
+        List <Opcion> temp = new List<Opcion>()
+        {
+            new Opcion {texto = elemento.respuestaCorrecta, esCorrecto = true},
+            new Opcion {texto = elemento.opcion1, esCorrecto = false},
+            new Opcion {texto = elemento.opcion2, esCorrecto = false},
+        };
+
+        Shuffle.List(ref temp);
+
+        preguntasExamen.Add(new PreguntaRandomizada
+        {
+            pregunta = elemento.textoPregunta,
+            opciones = temp,
+            imagen = elemento.imagen
+        });
+
+        index++;
+        if (index == todasPreguntas.Count) index = 0;
+    }
+}*/
