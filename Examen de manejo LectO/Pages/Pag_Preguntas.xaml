@@ -421,7 +421,7 @@
 
                 <StackPanel x:Name="stackPanelLeerTerminar"  Orientation="Vertical" Margin="50,50,50,0" Grid.Column="1" Grid.RowSpan="2" VerticalAlignment="Top">
                     <Viewbox>
-                        <Button Background="#6BDDED" BorderThickness="0" Width="230" Height="60" Margin="0,0,0,20" Cursor="Hand">
+                        <Button x:Name="ttsGeneral" Background="#6BDDED" BorderThickness="0" Width="230" Height="60" Margin="0,0,0,20" Cursor="Hand" Click="ttsGeneral_Click">
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock VerticalAlignment="Center" FontSize="25" Margin="0,0,7,0">Leer todo</TextBlock>
                                 <Image Source="/Examen de manejo LectO;component/Resources/Audio.png" Margin="7,0,0,0" Width="50" Opacity="0.7"></Image>
@@ -455,13 +455,13 @@
                     </Grid.ColumnDefinitions>
 
                     <StackPanel Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,50,0">
-                        <Button Margin="0,0,30,0" Width="50" Background="{x:Null}" Style="{StaticResource MyButton}">
-                            <Image Source="/Examen de manejo LectO;component/Resources/Audio.png" Opacity="0.7"></Image>
+                        <Button x:Name="ttsPregunta" Margin="0,0,30,0" Width="50" Background="{x:Null}" Style="{StaticResource MyButton}" Click="ttsPregunta_Click">
+                            <Image Source="/Examen de manejo LectO;component/Resources/Audio.png" Opacity="0.7"/>
                         </Button>
                         <TextBlock FontSize="30">01.</TextBlock>
                     </StackPanel>
 
-                    <TextBox x:Name="textBoxPregunta" Grid.Column="1" MaxHeight="200" FontSize="30" HorizontalAlignment="Left" TextAlignment="Center" TextWrapping="Wrap" BorderThickness="0" VerticalScrollBarVisibility="Auto" IsInactiveSelectionHighlightEnabled="True" VerticalAlignment="Top">
+                    <TextBox x:Name="textBoxPregunta" Grid.Column="1" MaxHeight="200" FontSize="30" HorizontalAlignment="Left" TextAlignment="Center" TextWrapping="Wrap" BorderThickness="0" VerticalScrollBarVisibility="Auto" VerticalAlignment="Top" IsReadOnly="True" SelectionOpacity="0">
                         ¿Qué vehículos pueden circular por un carril de sentido contrario al habitual, como norma general?
                     </TextBox>
                 </Grid>
@@ -482,12 +482,12 @@
                             </Grid.ColumnDefinitions>
 
                             <StackPanel Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Orientation="Horizontal">
-                                <Button Margin="0,0,30,0" Width="50" Background="{x:Null}" Style="{StaticResource MyButton}">
-                                    <Image Source="/Examen de manejo LectO;component/Resources/Audio.png" Opacity="0.7"></Image>
+                                <Button x:Name="ttsA" Margin="0,0,30,0" Width="50" Background="{x:Null}" Style="{StaticResource MyButton}" Click="ttsA_Click">
+                                    <Image Source="/Examen de manejo LectO;component/Resources/Audio.png" Opacity="0.7"/>
                                 </Button>
                                 <TextBlock FontSize="30" VerticalAlignment="Center">a</TextBlock>
                             </StackPanel>
-                            <TextBox x:Name="textBoxOpcionA" Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="30" BorderThickness="0">Turismos y motocicletas.</TextBox>
+                            <TextBox x:Name="textBoxA" Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="30" BorderThickness="0" SelectionBrush="White" SelectionOpacity="0" IsReadOnly="True">Turismos y motocicletas.</TextBox>
                         </Grid>
 
                         <Grid Margin="0,30,0,30">
@@ -497,13 +497,13 @@
                             </Grid.ColumnDefinitions>
 
                             <StackPanel Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Orientation="Horizontal">
-                                <Button Margin="0,0,30,0" Width="50" Background="{x:Null}" Style="{StaticResource MyButton}">
-                                    <Image Source="/Examen de manejo LectO;component/Resources/Audio.png" Opacity="0.7"></Image>
+                                <Button x:Name="ttsB" Margin="0,0,30,0" Width="50" Background="{x:Null}" Style="{StaticResource MyButton}" Click="ttsB_Click">
+                                    <Image Source="/Examen de manejo LectO;component/Resources/Audio.png" Opacity="0.7"/>
                                 </Button>
                                 <TextBlock FontSize="30" VerticalAlignment="Center">b</TextBlock>
                             </StackPanel>
 
-                            <TextBox x:Name="textBoxOpcionB" Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="30" BorderThickness="0">Cualquier vehículo.</TextBox>
+                            <TextBox x:Name="textBoxB" Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="30" BorderThickness="0" IsReadOnly="True" SelectionBrush="White" SelectionOpacity="0">Cualquier vehículo.</TextBox>
                         </Grid>
 
                         <Grid Margin="0,30,0,30">
@@ -513,14 +513,14 @@
                             </Grid.ColumnDefinitions>
 
                             <StackPanel Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Orientation="Horizontal">
-                                <Button Margin="0,0,30,0" Width="50" Background="{x:Null}" Style="{StaticResource MyButton}">
-                                    <Image Source="/Examen de manejo LectO;component/Resources/Audio.png" Opacity="0.7"></Image>
+                                <Button x:Name="ttsC" Margin="0,0,30,0" Width="50" Background="{x:Null}" Style="{StaticResource MyButton}" Click="ttsC_Click">
+                                    <Image Source="/Examen de manejo LectO;component/Resources/Audio.png" Opacity="0.7"/>
                                 </Button>
                                 <TextBlock FontSize="30" VerticalAlignment="Center">c</TextBlock>
                             </StackPanel>
 
 
-                            <TextBox x:Name="textBoxOpcionC" Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="30" BorderThickness="0">Turismos, con o sin remolque, y motocicletas.</TextBox>
+                            <TextBox x:Name="textBoxC" Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="30" BorderThickness="0" IsReadOnly="True" SelectionBrush="White" SelectionOpacity="0">Turismos, con o sin remolque, y motocicletas.</TextBox>
 
                         </Grid>
                     </StackPanel>
