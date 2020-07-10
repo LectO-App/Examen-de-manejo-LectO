@@ -92,12 +92,19 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\Pag_Home.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Pag_Preguntas.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pages\Pag_Home.xaml.cs">
+      <DependentUpon>Pag_Home.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Pag_Preguntas.xaml.cs">
       <DependentUpon>Pag_Preguntas.xaml</DependentUpon>
     </Compile>
@@ -157,6 +164,16 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\FotoPregunta1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\disfampng.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Logo LectO Full.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,5 +1,4 @@
-﻿using Examen_de_manejo_LectO.Pages;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,21 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Examen_de_manejo_LectO
+namespace Examen_de_manejo_LectO.Pages
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Pag_Home.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Pag_Home : Page
     {
-        Pag_Preguntas preguntas = new Pag_Preguntas();
-        Pag_Home Home = new Pag_Home();
-
-        public MainWindow()
+        public Pag_Home()
         {
             InitializeComponent();
-            this.WindowState = WindowState.Maximized;
-            MainFrame.Content = Home;
         }
     }
 }

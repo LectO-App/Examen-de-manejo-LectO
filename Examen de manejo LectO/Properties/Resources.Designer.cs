@@ -63,6 +63,16 @@ namespace Examen_de_manejo_LectO.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap disfampng {
+            get {
+                object obj = ResourceManager.GetObject("disfampng", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap FlechaLeft {
             get {
                 object obj = ResourceManager.GetObject("FlechaLeft", resourceCulture);
@@ -76,6 +86,16 @@ namespace Examen_de_manejo_LectO.Properties {
         internal static System.Drawing.Bitmap FlechaRight {
             get {
                 object obj = ResourceManager.GetObject("FlechaRight", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Logo_LectO_Full {
+            get {
+                object obj = ResourceManager.GetObject("Logo_LectO_Full", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

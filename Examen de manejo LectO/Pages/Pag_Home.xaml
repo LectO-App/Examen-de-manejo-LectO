@@ -1,0 +1,56 @@
+﻿<Page x:Class="Examen_de_manejo_LectO.Pages.Pag_Home"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Examen_de_manejo_LectO.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="1080" d:DesignWidth="1920"
+      Title="Pag_Home" Background="White" FontFamily="OpenDyslexic">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Height="auto" Width="auto" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0">
+            <Viewbox>
+            <StackPanel Width="600" Height="300" Orientation="Horizontal">
+                <Image Width="300" Source="/Examen de manejo LectO;component/Resources/disfampng.png"></Image>
+                <Image Width="300" Source="/Examen de manejo LectO;component/Resources/Logo LectO Full.png" ></Image>
+            </StackPanel>
+            </Viewbox>
+        </Grid>
+
+        <Viewbox Grid.Row="1">
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" >
+            <Grid Width="700" Height="120">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Grid.ColumnSpan="1" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="28">Nombre y apellido:</TextBlock>
+                    <TextBox Grid.Column="1" Grid.ColumnSpan="1" Height="38" FontSize="24" VerticalAlignment="Center"></TextBox>
+
+            </Grid>
+            <Grid Width="700" Height="120">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Grid.ColumnSpan="1" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="28">DNI:</TextBlock>
+                <TextBox Grid.Column="1" Grid.ColumnSpan="1" Height="38" FontSize="24" VerticalAlignment="Center"></TextBox>
+            </Grid>
+        </StackPanel>
+        </Viewbox>
+        <Button Height="100" Width="300" Background="#B2C5F5" BorderThickness="0" Cursor="Hand" FontSize="36" Grid.Row="2">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="7"/>
+                </Style>
+            </Button.Resources>
+            Empezar
+        </Button>
+    </Grid>
+</Page>
