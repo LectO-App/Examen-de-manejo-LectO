@@ -10,7 +10,16 @@
 
     <Page.Resources>
 
-        <Style x:Key="MyButton" TargetType="Button">
+        <Style x:Key="btnPreguntas" TargetType="Button">
+            <Setter Property="Background" Value="#FFDDDDDD"></Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#FF56FFF7"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        
+        <Style x:Key="btnAudio" TargetType="Button">
             <Setter Property="OverridesDefaultStyle" Value="True" />
             <Setter Property="Cursor" Value="Hand" />
             <Setter Property="Template">
@@ -32,13 +41,16 @@
 
     <Grid>
         <Rectangle VerticalAlignment="Top" Fill="#FF6491E9" Height="150"/>
+        <Border Panel.ZIndex="10" x:Name="borderImagenPalabra" BorderThickness="1" BorderBrush="Black" Width="150" Height="150" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" Grid.ColumnSpan="2" Visibility="Hidden">
+            <Image x:Name="imagenPalabra" Source="/Resources/blanco.jpg" MouseEnter="imagenPalabra_MouseEnter"></Image>
+        </Border>
 
-        <Grid Height="150" VerticalAlignment="Top">
+        <Grid x:Name="gridSuperior" Height="150" VerticalAlignment="Top">
             <Viewbox HorizontalAlignment="Center">
                 <StackPanel Orientation="Vertical" Margin="30,10,30,10">
 
                     <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
-                        <Button Margin="0,0,5,0" MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Cursor="Hand" BorderThickness="0">
+                        <Button x:Name="preg1" Margin="0,0,5,0" MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Cursor="Hand" Style="{StaticResource btnPreguntas}" BorderThickness="0" Click="cambiaDePregunta_Click" Background="#FF56FFF7">
                             <TextBlock Foreground="#5F5F5F" FontSize="30" Text="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             <Button.Effect>
                                 <DropShadowEffect BlurRadius="4" ShadowDepth="4" Direction="270" Opacity="0.35" RenderingBias="Quality"/>
@@ -50,7 +62,7 @@
                             </Button.Resources>
                         </Button>
 
-                        <Button Margin="5,0,5,0" MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Cursor="Hand" BorderThickness="0">
+                        <Button x:Name="preg2" Margin="5,0,5,0" MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Cursor="Hand" Style="{StaticResource btnPreguntas}" BorderThickness="0" Click="cambiaDePregunta_Click">
                             <TextBlock Foreground="#5F5F5F" FontSize="30" Text="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             <Button.Effect>
                                 <DropShadowEffect BlurRadius="4" ShadowDepth="4" Direction="270" Opacity="0.35" RenderingBias="Quality"/>
@@ -62,7 +74,7 @@
                             </Button.Resources>
                         </Button>
 
-                        <Button MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Margin="5,0,5,0"  Cursor="Hand"  BorderThickness="0">
+                        <Button x:Name="preg3" MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Margin="5,0,5,0" Style="{StaticResource btnPreguntas}" Cursor="Hand"  BorderThickness="0" Click="cambiaDePregunta_Click">
                             <TextBlock Foreground="#5F5F5F" FontSize="30" Text="3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             <Button.Effect>
                                 <DropShadowEffect BlurRadius="4" ShadowDepth="4" Direction="270" Opacity="0.35" RenderingBias="Quality"/>
@@ -74,7 +86,7 @@
                             </Button.Resources>
                         </Button>
 
-                        <Button MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Margin="5,0,5,0"  Cursor="Hand" BorderThickness="0">
+                        <Button x:Name="preg4" MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Margin="5,0,5,0" Style="{StaticResource btnPreguntas}" Cursor="Hand" BorderThickness="0" Click="cambiaDePregunta_Click">
                             <TextBlock Foreground="#5F5F5F" FontSize="30" Text="4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             <Button.Effect>
                                 <DropShadowEffect BlurRadius="4" ShadowDepth="4" Direction="270" Opacity="0.35" RenderingBias="Quality"/>
@@ -86,7 +98,7 @@
                             </Button.Resources>
                         </Button>
 
-                        <Button MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Margin="5,0,5,0"  Cursor="Hand" BorderThickness="0">
+                        <Button x:Name="preg5" MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Margin="5,0,5,0" Style="{StaticResource btnPreguntas}" Cursor="Hand" BorderThickness="0" Click="cambiaDePregunta_Click">
                             <TextBlock Foreground="#5F5F5F" FontSize="30" Text="5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             <Button.Effect>
                                 <DropShadowEffect BlurRadius="4" ShadowDepth="4" Direction="270" Opacity="0.35" RenderingBias="Quality"/>
@@ -98,7 +110,7 @@
                             </Button.Resources>
                         </Button>
 
-                        <Button MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Margin="5,0,5,0"  Cursor="Hand" BorderThickness="0">
+                        <Button x:Name="preg6" MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Margin="5,0,5,0" Style="{StaticResource btnPreguntas}" Cursor="Hand" BorderThickness="0" Click="cambiaDePregunta_Click">
                             <TextBlock Foreground="#5F5F5F" FontSize="30" Text="6" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             <Button.Effect>
                                 <DropShadowEffect BlurRadius="4" ShadowDepth="4" Direction="270" Opacity="0.35" RenderingBias="Quality"/>
@@ -110,7 +122,7 @@
                             </Button.Resources>
                         </Button>
 
-                        <Button MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Margin="5,0,5,0"  Cursor="Hand" BorderThickness="0">
+                        <Button x:Name="preg7" MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Margin="5,0,5,0" Style="{StaticResource btnPreguntas}" Cursor="Hand" BorderThickness="0" Click="cambiaDePregunta_Click">
                             <TextBlock Foreground="#5F5F5F" FontSize="30" Text="7" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             <Button.Effect>
                                 <DropShadowEffect BlurRadius="4" ShadowDepth="4" Direction="270" Opacity="0.35" RenderingBias="Quality"/>
@@ -122,7 +134,7 @@
                             </Button.Resources>
                         </Button>
 
-                        <Button MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Margin="5,0,5,0"  Cursor="Hand" BorderThickness="0">
+                        <Button x:Name="preg8" MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Margin="5,0,5,0" Style="{StaticResource btnPreguntas}" Cursor="Hand" BorderThickness="0" Click="cambiaDePregunta_Click">
                             <TextBlock Foreground="#5F5F5F" FontSize="30" Text="8" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             <Button.Effect>
                                 <DropShadowEffect BlurRadius="4" ShadowDepth="4" Direction="270" Opacity="0.35" RenderingBias="Quality"/>
@@ -134,7 +146,7 @@
                             </Button.Resources>
                         </Button>
 
-                        <Button MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Margin="5,0,5,0"  Cursor="Hand" BorderThickness="0">
+                        <Button x:Name="preg9" MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Margin="5,0,5,0" Style="{StaticResource btnPreguntas}" Cursor="Hand" BorderThickness="0" Click="cambiaDePregunta_Click">
                             <TextBlock Foreground="#5F5F5F" FontSize="30" Text="9" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             <Button.Effect>
                                 <DropShadowEffect BlurRadius="4" ShadowDepth="4" Direction="270" Opacity="0.35" RenderingBias="Quality"/>
@@ -146,7 +158,7 @@
                             </Button.Resources>
                         </Button>
 
-                        <Button MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Margin="5,0,5,0"  Cursor="Hand" BorderThickness="0">
+                        <Button x:Name="preg10" MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Margin="5,0,5,0" Style="{StaticResource btnPreguntas}" Cursor="Hand" BorderThickness="0" Click="cambiaDePregunta_Click">
                             <TextBlock Foreground="#5F5F5F" FontSize="30" Text="10" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             <Button.Effect>
                                 <DropShadowEffect BlurRadius="4" ShadowDepth="4" Direction="270" Opacity="0.35" RenderingBias="Quality"/>
@@ -158,7 +170,7 @@
                             </Button.Resources>
                         </Button>
 
-                        <Button MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Margin="5,0,5,0"  Cursor="Hand" BorderThickness="0">
+                        <Button x:Name="preg11" MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Margin="5,0,5,0" Style="{StaticResource btnPreguntas}" Cursor="Hand" BorderThickness="0" Click="cambiaDePregunta_Click">
                             <TextBlock Foreground="#5F5F5F" FontSize="30" Text="11" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             <Button.Effect>
                                 <DropShadowEffect BlurRadius="4" ShadowDepth="4" Direction="270" Opacity="0.35" RenderingBias="Quality"/>
@@ -170,7 +182,7 @@
                             </Button.Resources>
                         </Button>
 
-                        <Button MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Margin="5,0,5,0"  Cursor="Hand" BorderThickness="0">
+                        <Button x:Name="preg12" MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Margin="5,0,5,0" Style="{StaticResource btnPreguntas}" Cursor="Hand" BorderThickness="0" Click="cambiaDePregunta_Click">
                             <TextBlock Foreground="#5F5F5F" FontSize="30" Text="12" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             <Button.Effect>
                                 <DropShadowEffect BlurRadius="4" ShadowDepth="4" Direction="270" Opacity="0.35" RenderingBias="Quality"/>
@@ -182,7 +194,7 @@
                             </Button.Resources>
                         </Button>
 
-                        <Button MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Margin="5,0,5,0"  Cursor="Hand" BorderThickness="0">
+                        <Button x:Name="preg13" MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Margin="5,0,5,0" Style="{StaticResource btnPreguntas}" Cursor="Hand" BorderThickness="0" Click="cambiaDePregunta_Click">
                             <TextBlock Foreground="#5F5F5F" FontSize="30" Text="13" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             <Button.Effect>
                                 <DropShadowEffect BlurRadius="4" ShadowDepth="4" Direction="270" Opacity="0.35" RenderingBias="Quality"/>
@@ -194,7 +206,7 @@
                             </Button.Resources>
                         </Button>
 
-                        <Button MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Margin="5,0,5,0"  Cursor="Hand" BorderThickness="0">
+                        <Button x:Name="preg14" MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Margin="5,0,5,0" Style="{StaticResource btnPreguntas}" Cursor="Hand" BorderThickness="0" Click="cambiaDePregunta_Click">
                             <TextBlock Foreground="#5F5F5F" FontSize="30" Text="14" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             <Button.Effect>
                                 <DropShadowEffect BlurRadius="4" ShadowDepth="4" Direction="270" Opacity="0.35" RenderingBias="Quality"/>
@@ -206,7 +218,7 @@
                             </Button.Resources>
                         </Button>
 
-                        <Button MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Margin="5,0,0,0" BorderThickness="0">
+                        <Button x:Name="preg15" MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Margin="5,0,0,0" Style="{StaticResource btnPreguntas}" BorderThickness="0" Click="cambiaDePregunta_Click">
                             <TextBlock Foreground="#5F5F5F" FontSize="30" Text="15" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             <Button.Effect>
                                 <DropShadowEffect BlurRadius="4" ShadowDepth="4" Direction="270" Opacity="0.35" RenderingBias="Quality"/>
@@ -220,7 +232,7 @@
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
-                        <Button Margin="0,0,5,0" MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Cursor="Hand" BorderThickness="0">
+                        <Button x:Name="preg16" Margin="0,0,5,0" MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Cursor="Hand" Style="{StaticResource btnPreguntas}" BorderThickness="0" Click="cambiaDePregunta_Click">
                             <TextBlock Foreground="#5F5F5F" FontSize="30" Text="16" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             <Button.Effect>
                                 <DropShadowEffect BlurRadius="4" ShadowDepth="4" Direction="270" Opacity="0.35" RenderingBias="Quality"/>
@@ -232,7 +244,7 @@
                             </Button.Resources>
                         </Button>
 
-                        <Button Margin="5,0,5,0" MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Cursor="Hand" BorderThickness="0">
+                        <Button x:Name="preg17" Margin="5,0,5,0" MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Cursor="Hand" Style="{StaticResource btnPreguntas}" BorderThickness="0" Click="cambiaDePregunta_Click">
                             <TextBlock Foreground="#5F5F5F" FontSize="30" Text="17" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             <Button.Effect>
                                 <DropShadowEffect BlurRadius="4" ShadowDepth="4" Direction="270" Opacity="0.35" RenderingBias="Quality"/>
@@ -244,7 +256,7 @@
                             </Button.Resources>
                         </Button>
 
-                        <Button MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Margin="5,0,5,0"  Cursor="Hand"  BorderThickness="0">
+                        <Button x:Name="preg18" MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Margin="5,0,5,0" Style="{StaticResource btnPreguntas}" Cursor="Hand"  BorderThickness="0" Click="cambiaDePregunta_Click">
                             <TextBlock Foreground="#5F5F5F" FontSize="30" Text="18" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             <Button.Effect>
                                 <DropShadowEffect BlurRadius="4" ShadowDepth="4" Direction="270" Opacity="0.35" RenderingBias="Quality"/>
@@ -256,7 +268,7 @@
                             </Button.Resources>
                         </Button>
 
-                        <Button MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Margin="5,0,5,0"  Cursor="Hand" BorderThickness="0">
+                        <Button x:Name="preg19" MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Margin="5,0,5,0" Style="{StaticResource btnPreguntas}" Cursor="Hand" BorderThickness="0" Click="cambiaDePregunta_Click">
                             <TextBlock Foreground="#5F5F5F" FontSize="30" Text="19" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             <Button.Effect>
                                 <DropShadowEffect BlurRadius="4" ShadowDepth="4" Direction="270" Opacity="0.35" RenderingBias="Quality"/>
@@ -268,7 +280,7 @@
                             </Button.Resources>
                         </Button>
 
-                        <Button MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Margin="5,0,5,0"  Cursor="Hand" BorderThickness="0">
+                        <Button x:Name="preg20" MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Margin="5,0,5,0" Style="{StaticResource btnPreguntas}" Cursor="Hand" BorderThickness="0" Click="cambiaDePregunta_Click">
                             <TextBlock Foreground="#5F5F5F" FontSize="30" Text="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             <Button.Effect>
                                 <DropShadowEffect BlurRadius="4" ShadowDepth="4" Direction="270" Opacity="0.35" RenderingBias="Quality"/>
@@ -280,7 +292,7 @@
                             </Button.Resources>
                         </Button>
 
-                        <Button MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Margin="5,0,5,0"  Cursor="Hand" BorderThickness="0">
+                        <Button x:Name="preg21" MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Margin="5,0,5,0" Style="{StaticResource btnPreguntas}" Cursor="Hand" BorderThickness="0" Click="cambiaDePregunta_Click">
                             <TextBlock Foreground="#5F5F5F" FontSize="30" Text="21" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             <Button.Effect>
                                 <DropShadowEffect BlurRadius="4" ShadowDepth="4" Direction="270" Opacity="0.35" RenderingBias="Quality"/>
@@ -292,7 +304,7 @@
                             </Button.Resources>
                         </Button>
 
-                        <Button MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Margin="5,0,5,0"  Cursor="Hand" BorderThickness="0">
+                        <Button x:Name="preg22" MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Margin="5,0,5,0" Style="{StaticResource btnPreguntas}" Cursor="Hand" BorderThickness="0" Click="cambiaDePregunta_Click">
                             <TextBlock Foreground="#5F5F5F" FontSize="30" Text="22" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             <Button.Effect>
                                 <DropShadowEffect BlurRadius="4" ShadowDepth="4" Direction="270" Opacity="0.35" RenderingBias="Quality"/>
@@ -304,7 +316,7 @@
                             </Button.Resources>
                         </Button>
 
-                        <Button MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Margin="5,0,5,0"  Cursor="Hand" BorderThickness="0">
+                        <Button x:Name="preg23" MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Margin="5,0,5,0" Style="{StaticResource btnPreguntas}" Cursor="Hand" BorderThickness="0" Click="cambiaDePregunta_Click">
                             <TextBlock Foreground="#5F5F5F" FontSize="30" Text="23" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             <Button.Effect>
                                 <DropShadowEffect BlurRadius="4" ShadowDepth="4" Direction="270" Opacity="0.35" RenderingBias="Quality"/>
@@ -316,7 +328,7 @@
                             </Button.Resources>
                         </Button>
 
-                        <Button MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Margin="5,0,5,0"  Cursor="Hand" BorderThickness="0">
+                        <Button x:Name="preg24" MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Margin="5,0,5,0" Style="{StaticResource btnPreguntas}" Cursor="Hand" BorderThickness="0" Click="cambiaDePregunta_Click">
                             <TextBlock Foreground="#5F5F5F" FontSize="30" Text="24" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             <Button.Effect>
                                 <DropShadowEffect BlurRadius="4" ShadowDepth="4" Direction="270" Opacity="0.35" RenderingBias="Quality"/>
@@ -328,7 +340,7 @@
                             </Button.Resources>
                         </Button>
 
-                        <Button MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Margin="5,0,5,0"  Cursor="Hand" BorderThickness="0">
+                        <Button x:Name="preg25" MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Margin="5,0,5,0" Style="{StaticResource btnPreguntas}" Cursor="Hand" BorderThickness="0" Click="cambiaDePregunta_Click">
                             <TextBlock Foreground="#5F5F5F" FontSize="30" Text="25" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             <Button.Effect>
                                 <DropShadowEffect BlurRadius="4" ShadowDepth="4" Direction="270" Opacity="0.35" RenderingBias="Quality"/>
@@ -340,7 +352,7 @@
                             </Button.Resources>
                         </Button>
 
-                        <Button MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Margin="5,0,5,0"  Cursor="Hand" BorderThickness="0">
+                        <Button x:Name="preg26" MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Margin="5,0,5,0" Style="{StaticResource btnPreguntas}" Cursor="Hand" BorderThickness="0" Click="cambiaDePregunta_Click">
                             <TextBlock Foreground="#5F5F5F" FontSize="30" Text="26" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             <Button.Effect>
                                 <DropShadowEffect BlurRadius="4" ShadowDepth="4" Direction="270" Opacity="0.35" RenderingBias="Quality"/>
@@ -352,7 +364,7 @@
                             </Button.Resources>
                         </Button>
 
-                        <Button MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Margin="5,0,5,0"  Cursor="Hand" BorderThickness="0">
+                        <Button x:Name="preg27" MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Margin="5,0,5,0" Style="{StaticResource btnPreguntas}" Cursor="Hand" BorderThickness="0" Click="cambiaDePregunta_Click">
                             <TextBlock Foreground="#5F5F5F" FontSize="30" Text="27" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             <Button.Effect>
                                 <DropShadowEffect BlurRadius="4" ShadowDepth="4" Direction="270" Opacity="0.35" RenderingBias="Quality"/>
@@ -364,7 +376,7 @@
                             </Button.Resources>
                         </Button>
 
-                        <Button MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Margin="5,0,5,0"  Cursor="Hand" BorderThickness="0">
+                        <Button x:Name="preg28" MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Margin="5,0,5,0" Style="{StaticResource btnPreguntas}" Cursor="Hand" BorderThickness="0" Click="cambiaDePregunta_Click">
                             <TextBlock Foreground="#5F5F5F" FontSize="30" Text="28" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             <Button.Effect>
                                 <DropShadowEffect BlurRadius="4" ShadowDepth="4" Direction="270" Opacity="0.35" RenderingBias="Quality"/>
@@ -376,7 +388,7 @@
                             </Button.Resources>
                         </Button>
 
-                        <Button MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Margin="5,0,5,0"  Cursor="Hand" BorderThickness="0">
+                        <Button x:Name="preg29" MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Margin="5,0,5,0" Style="{StaticResource btnPreguntas}" Cursor="Hand" BorderThickness="0" Click="cambiaDePregunta_Click">
                             <TextBlock Foreground="#5F5F5F" FontSize="30" Text="29" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             <Button.Effect>
                                 <DropShadowEffect BlurRadius="4" ShadowDepth="4" Direction="270" Opacity="0.35" RenderingBias="Quality"/>
@@ -388,7 +400,7 @@
                             </Button.Resources>
                         </Button>
 
-                        <Button MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Margin="5,0,0,0" BorderThickness="0">
+                        <Button x:Name="preg30" MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Margin="5,0,0,0" Style="{StaticResource btnPreguntas}" BorderThickness="0" Click="cambiaDePregunta_Click">
                             <TextBlock Foreground="#5F5F5F" FontSize="30" Text="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             <Button.Effect>
                                 <DropShadowEffect BlurRadius="4" ShadowDepth="4" Direction="270" Opacity="0.35" RenderingBias="Quality"/>
@@ -405,7 +417,7 @@
             </Viewbox>
         </Grid>
 
-        <Grid Margin="0,150,0,0">
+        <Grid x:Name="generalGrid" Margin="0,150,0,0">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="4*"/>
@@ -434,7 +446,7 @@
                         </Button>
                     </Viewbox>
                     <Viewbox>
-                        <Button Background="#B2C5F5" BorderThickness="0" Width="230" Height="60" Margin="0,20,0,0" Cursor="Hand">
+                        <Button x:Name="btnTerminarExamen" Background="#B2C5F5" BorderThickness="0" Width="230" Height="60" Margin="0,20,0,0" Cursor="Hand" Click="btnTerminarExamen_Click">
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock VerticalAlignment="Center" FontSize="25" Margin="0,0,7,0">Terminar</TextBlock>
                                 <Image Source="/Examen de manejo LectO;component/Resources/FlechaRight.png" Margin="7,0,0,0" Width="50" Opacity="0.7"></Image>
@@ -455,15 +467,19 @@
                     </Grid.ColumnDefinitions>
 
                     <StackPanel Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,50,0">
-                        <Button x:Name="ttsPregunta" Margin="0,0,30,0" Width="50" Background="{x:Null}" Style="{StaticResource MyButton}" Click="ttsPregunta_Click">
+                        <Button x:Name="ttsPregunta" Margin="0,0,30,0" Width="50" Background="{x:Null}" Style="{StaticResource btnAudio}" Click="ttsPregunta_Click">
                             <Image Source="/Examen de manejo LectO;component/Resources/Audio.png" Opacity="0.7"/>
                         </Button>
-                        <TextBlock FontSize="30">01.</TextBlock>
+                        <TextBlock x:Name="txtNumeroPregunta" FontSize="30">01.</TextBlock>
                     </StackPanel>
 
-                    <TextBox x:Name="textBoxPregunta" Grid.Column="1" MaxHeight="200" FontSize="30" HorizontalAlignment="Left" TextAlignment="Center" TextWrapping="Wrap" BorderThickness="0" VerticalScrollBarVisibility="Auto" VerticalAlignment="Top" IsReadOnly="True" SelectionOpacity="0">
-                        ¿Qué vehículos pueden circular por un carril de sentido contrario al habitual, como norma general?
-                    </TextBox>
+                    <RichTextBox x:Name="textBoxPregunta" Grid.Column="1" MaxHeight="200" FontSize="30" HorizontalAlignment="Left" BorderThickness="0" VerticalScrollBarVisibility="Auto" VerticalAlignment="Top" IsReadOnly="True" SelectionOpacity="0" MouseLeave="textBoxPregunta_MouseLeave" MouseMove="textBoxPregunta_MouseMove" Block.TextAlignment="Center">
+                        <FlowDocument>
+                            <Paragraph>
+                                ¿Qué vehículos pueden circular por un carril de sentido contrario al habitual, como norma general?
+                            </Paragraph>
+                        </FlowDocument>
+                    </RichTextBox>
                 </Grid>
 
                 <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="50,0,50,0">
@@ -472,63 +488,108 @@
                         <ColumnDefinition Width="2*"/>
                     </Grid.ColumnDefinitions>
 
-                    <Image Grid.Column="0" Source="/Examen de manejo LectO;component/Resources/FotoPregunta1.jpg" Stretch="Uniform"></Image>
+                    <Image x:Name="imgPregunta" Grid.Column="0" Source="/Examen de manejo LectO;component/Resources/FotoPregunta1.jpg" Stretch="Uniform"></Image>
 
                     <StackPanel Grid.Column="1" Orientation="Vertical" VerticalAlignment="Center" Margin="50,0,0,0">
                         <Grid Margin="0,0,0,30">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="120"/>
+                                <ColumnDefinition Width="135"/>
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
 
                             <StackPanel Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Orientation="Horizontal">
-                                <Button x:Name="ttsA" Margin="0,0,30,0" Width="50" Background="{x:Null}" Style="{StaticResource MyButton}" Click="ttsA_Click">
+                                <Button x:Name="ttsA" Margin="0,0,15,0" Width="50" Background="{x:Null}" Style="{StaticResource btnAudio}" Click="ttsA_Click">
                                     <Image Source="/Examen de manejo LectO;component/Resources/Audio.png" Opacity="0.7"/>
                                 </Button>
-                                <TextBlock FontSize="30" VerticalAlignment="Center">a</TextBlock>
+                                <Button x:Name="btnA" Width="60" Height="60" BorderThickness="0" Cursor="Hand" Click="btnA_Click">
+                                    <TextBlock FontSize="30" VerticalAlignment="Center">a</TextBlock>
+                                    <Button.Resources>
+                                        <Style TargetType="Border">
+                                            <Setter Property="CornerRadius" Value="30"/>
+                                        </Style>
+                                    </Button.Resources>
+                                </Button>
                             </StackPanel>
-                            <TextBox x:Name="textBoxA" Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="30" BorderThickness="0" SelectionBrush="White" SelectionOpacity="0" IsReadOnly="True">Turismos y motocicletas.</TextBox>
+
+                            <RichTextBox x:Name="textBoxA" Grid.Column="1" VerticalAlignment="Center" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="30" BorderThickness="0" SelectionBrush="White" SelectionOpacity="0" IsReadOnly="True" MouseLeave="textBoxA_MouseLeave" MouseMove="textBoxA_MouseMove">
+                                <FlowDocument>
+                                    <Paragraph>
+                                        Turismos y motocicletas.
+                                    </Paragraph>
+                                </FlowDocument>
+                            </RichTextBox>
                         </Grid>
 
                         <Grid Margin="0,30,0,30">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="120"/>
+                                <ColumnDefinition Width="135"/>
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
 
                             <StackPanel Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Orientation="Horizontal">
-                                <Button x:Name="ttsB" Margin="0,0,30,0" Width="50" Background="{x:Null}" Style="{StaticResource MyButton}" Click="ttsB_Click">
+                                <Button x:Name="ttsB" Margin="0,0,15,0" Width="50" Background="{x:Null}" Style="{StaticResource btnAudio}" Click="ttsB_Click">
                                     <Image Source="/Examen de manejo LectO;component/Resources/Audio.png" Opacity="0.7"/>
                                 </Button>
-                                <TextBlock FontSize="30" VerticalAlignment="Center">b</TextBlock>
+                                <Button x:Name="btnB" Width="60" Height="60" BorderThickness="0" Background="#FFDDDDDD" Cursor="Hand" Click="btnB_Click">
+                                    <TextBlock FontSize="30" VerticalAlignment="Center">b</TextBlock>
+                                    <Button.Resources>
+                                        <Style TargetType="Border">
+                                            <Setter Property="CornerRadius" Value="30"/>
+                                        </Style>
+                                    </Button.Resources>
+                                </Button>
                             </StackPanel>
 
+                            <!--
                             <TextBox x:Name="textBoxB" Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="30" BorderThickness="0" IsReadOnly="True" SelectionBrush="White" SelectionOpacity="0">Cualquier vehículo.</TextBox>
+                            -->
+
+                            <RichTextBox x:Name="textBoxB" Grid.Column="1" VerticalAlignment="Center" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="30" BorderThickness="0" IsReadOnly="True" SelectionBrush="White" SelectionOpacity="0" MouseLeave="textBoxB_MouseLeave" MouseMove="textBoxB_MouseMove">
+                                <FlowDocument>
+                                    <Paragraph>
+                                        Cualquier vehículo.
+                                    </Paragraph>
+                                </FlowDocument>
+                            </RichTextBox>
                         </Grid>
 
                         <Grid Margin="0,30,0,30">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="120"/>
+                                <ColumnDefinition Width="135"/>
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
 
                             <StackPanel Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Orientation="Horizontal">
-                                <Button x:Name="ttsC" Margin="0,0,30,0" Width="50" Background="{x:Null}" Style="{StaticResource MyButton}" Click="ttsC_Click">
+                                <Button x:Name="ttsC" Margin="0,0,15,0" Width="50" Background="{x:Null}" Style="{StaticResource btnAudio}" Click="ttsC_Click">
                                     <Image Source="/Examen de manejo LectO;component/Resources/Audio.png" Opacity="0.7"/>
                                 </Button>
-                                <TextBlock FontSize="30" VerticalAlignment="Center">c</TextBlock>
+                                <Button x:Name="btnC" Width="60" Height="60" BorderThickness="0" Cursor="Hand" Click="btnC_Click">
+                                    <TextBlock FontSize="30" VerticalAlignment="Center">c</TextBlock>
+                                    <Button.Resources>
+                                        <Style TargetType="Border">
+                                            <Setter Property="CornerRadius" Value="30"/>
+                                        </Style>
+                                    </Button.Resources>
+                                </Button>
                             </StackPanel>
 
-
+                            <!--
                             <TextBox x:Name="textBoxC" Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="30" BorderThickness="0" IsReadOnly="True" SelectionBrush="White" SelectionOpacity="0">Turismos, con o sin remolque, y motocicletas.</TextBox>
-
+                            -->
+                            <RichTextBox x:Name="textBoxC" Grid.Column="1" VerticalAlignment="Center" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="30" BorderThickness="0" IsReadOnly="True" SelectionBrush="White" SelectionOpacity="0" MouseLeave="textBoxC_MouseLeave" MouseMove="textBoxC_MouseMove">
+                                <FlowDocument>
+                                    <Paragraph>
+                                        Turismos, con o sin remolque, y motocicletas.
+                                    </Paragraph>
+                                </FlowDocument>
+                            </RichTextBox>
                         </Grid>
                     </StackPanel>
 
                 </Grid>
 
                 <StackPanel Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="3" Margin="0,30,0,30" HorizontalAlignment="Center" Orientation="Horizontal">
-                    <Button Margin="0,0,50,0" BorderBrush="{x:Null}" BorderThickness="0" Background="#FF779BF9" Foreground="{x:Null}" Cursor="Hand">
+                    <Button x:Name="btnAnteriorPregunta" Margin="0,0,50,0" BorderBrush="{x:Null}" BorderThickness="0" Background="#FF779BF9" Foreground="{x:Null}" Cursor="Hand" Click="btnAnteriorPregunta_Click">
                         <Image Margin="10,10,10,10" Source="/Examen de manejo LectO;component/Resources/FlechaLeft.png"/>
                         <Button.Resources>
                             <Style TargetType="Border">
@@ -536,7 +597,7 @@
                             </Style>
                         </Button.Resources>
                     </Button>
-                    <Button Margin="50,0,0,0" BorderBrush="{x:Null}" BorderThickness="0" Background="#FF779BF9" Foreground="{x:Null}" Cursor="Hand">
+                    <Button x:Name="btnSiguientePregunta" Margin="50,0,0,0" BorderBrush="{x:Null}" BorderThickness="0" Background="#FF779BF9" Foreground="{x:Null}" Cursor="Hand" Click="btnSiguientePregunta_Click">
                         <Image Margin="10,10,10,10" Source="/Examen de manejo LectO;component/Resources/FlechaRight.png"/>
                         <Button.Resources>
                             <Style TargetType="Border">
@@ -549,9 +610,8 @@
                 <Grid Grid.Row="3" Grid.RowSpan="1" Grid.Column="1" HorizontalAlignment="Center">
                     <StackPanel Width="200" Orientation="Vertical" VerticalAlignment="Bottom" Margin="0,0,0,30" Height="100">
                         <TextBlock FontSize="20" TextAlignment="Center" Height="36">Tiempo restante</TextBlock>
-                        <TextBox BorderThickness="1.5" FontSize="60" TextAlignment="Center" FontFamily="DS-Digital">12:00</TextBox>
-                    
-                </StackPanel>
+                        <TextBox BorderThickness="0" FontSize="60" TextAlignment="Center" FontFamily="DS-Digital">12:00</TextBox>
+                    </StackPanel>
                 </Grid>
                 
             </Grid>

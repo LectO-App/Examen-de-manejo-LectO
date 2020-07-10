@@ -11,6 +11,7 @@ using System.Net.Cache;
 using System.Net;
 using System.Net.Http;
 using System.Windows;
+using System.Windows.Media.Imaging;
 
 namespace Examen_de_manejo_LectO
 {
@@ -19,7 +20,7 @@ namespace Examen_de_manejo_LectO
     class Cuestionario
     {
         List<PreguntaRandomizada> preguntasExamen;
-        int cantidadPreguntas;
+        public int cantidadPreguntas;
 
         public Cuestionario()
         {
@@ -58,6 +59,25 @@ namespace Examen_de_manejo_LectO
             }
         }
 
+        /*
+        public void pregunta(int numeroPregunta, ref string rutaImagen, ref int respondida, ref List<string> listaPregunta)
+        {
+            numeroPregunta--;
+            if (!(numeroPregunta >= 0 && numeroPregunta < cantidadPreguntas)) throw new Exception("No existe esta pregunta. Asegúrate de ingresar un valor entre 1 y la cantidad de preguntas.");
+
+            PreguntaRandomizada estaPregunta = preguntasExamen[numeroPregunta];
+
+            rutaImagen = "Images/" + estaPregunta.imagen + ".png";
+            respondida = estaPregunta.respondido;
+
+            listaPregunta = new List<string>();
+            listaPregunta.Add(estaPregunta.pregunta);
+
+            foreach (var g in estaPregunta.opciones) listaPregunta.Add(g.texto);
+        }
+
+        LA DE ULI
+
         public void pregunta(int numeroPregunta, ref Bitmap imagen, ref int respondida, ref List<string> listaPregunta)
         {
             numeroPregunta--;
@@ -66,6 +86,23 @@ namespace Examen_de_manejo_LectO
             PreguntaRandomizada estaPregunta = preguntasExamen[numeroPregunta];
 
             imagen = new Bitmap("Images/" + estaPregunta.imagen + ".png");
+            respondida = estaPregunta.respondido;
+
+            listaPregunta = new List<string>();
+            listaPregunta.Add(estaPregunta.pregunta);
+
+            foreach (var g in estaPregunta.opciones) listaPregunta.Add(g.texto);
+        }
+        */
+
+        public void pregunta(int numeroPregunta, ref BitmapImage imagen, ref int respondida, ref List<string> listaPregunta)
+        {
+            numeroPregunta--;
+            if (!(numeroPregunta >= 0 && numeroPregunta < cantidadPreguntas)) throw new Exception("No existe esta pregunta. Asegúrate de ingresar un valor entre 1 y la cantidad de preguntas.");
+
+            PreguntaRandomizada estaPregunta = preguntasExamen[numeroPregunta];
+
+            imagen = new BitmapImage(new Uri("Images/" + estaPregunta.imagen + ".png", UriKind.Relative));
             respondida = estaPregunta.respondido;
 
             listaPregunta = new List<string>();

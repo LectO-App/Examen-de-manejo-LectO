@@ -21,7 +21,6 @@ namespace Examen_de_manejo_LectO
     /// </summary>
     public partial class MainWindow : Window
     {
-        Pag_Preguntas preguntas = new Pag_Preguntas();
         Pag_Home Home = new Pag_Home();
 
         public MainWindow()
