@@ -8,17 +8,23 @@
       d:DesignHeight="1080" d:DesignWidth="1920"
       Title="Pag_Home" Background="White" FontFamily="OpenDyslexic">
 
+
     <Grid>
         <Grid Height="150" VerticalAlignment="Top" Background="#FF6491E9">
             <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="50">Examen de conducir</TextBlock>
         </Grid>
         <Grid Margin="0,150,0,0">
             <Grid.RowDefinitions>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition Height="0.7*"></RowDefinition>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition Height="0.7*"/>
             </Grid.RowDefinitions>
-            <Grid Height="auto" Width="auto" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Row="0" Grid.Column="1" Height="auto" Width="auto" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <Viewbox>
                     <StackPanel Width="600" Height="300" Orientation="Horizontal">
                         <Image Width="300" Source="/Examen de manejo LectO;component/Resources/disfampng.png"></Image>
@@ -27,15 +33,15 @@
                 </Viewbox>
             </Grid>
 
-            <Viewbox Grid.Row="1">
+            <Viewbox Grid.Row="1" Grid.Column="1">
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" >
-                    <Grid Width="700" Height="120">
+                    <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition></ColumnDefinition>
                             <ColumnDefinition></ColumnDefinition>
                         </Grid.ColumnDefinitions>
                         <TextBlock Grid.Column="0" Grid.ColumnSpan="1" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="28">Nombre y apellido:</TextBlock>
-                        <TextBox x:Name="txtNombreApellido" Grid.Column="1" Grid.ColumnSpan="1" Height="38" FontSize="24" VerticalAlignment="Center"></TextBox>
+                        <TextBox x:Name="txtNombreApellido" Grid.Column="1" Grid.ColumnSpan="1" FontSize="24" VerticalAlignment="Center"></TextBox>
 
                     </Grid>
                     <Grid Width="700" Height="120">
@@ -44,11 +50,11 @@
                             <ColumnDefinition></ColumnDefinition>
                         </Grid.ColumnDefinitions>
                         <TextBlock Grid.Column="0" Grid.ColumnSpan="1" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="28">Documento:</TextBlock>
-                        <TextBox x:Name="txtDocumento" Grid.Column="1" Grid.ColumnSpan="1" Height="38" FontSize="24" VerticalAlignment="Center"></TextBox>
+                        <TextBox x:Name="txtDocumento" Grid.Column="1" Grid.ColumnSpan="1" FontSize="24" VerticalAlignment="Center"></TextBox>
                     </Grid>
                 </StackPanel>
             </Viewbox>
-            <Button x:Name="btnEmpezar" Height="100" Width="300" Background="#B2C5F5" BorderThickness="0" Cursor="Hand" FontSize="36" Grid.Row="2" Click="btnEmpezar_Click">
+            <Button Grid.Row="2" Grid.Column="1" x:Name="btnEmpezar" Height="100" Width="300" Background="#B2C5F5" BorderThickness="0" Cursor="Hand" FontSize="36" Click="btnEmpezar_Click">
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="7"/>

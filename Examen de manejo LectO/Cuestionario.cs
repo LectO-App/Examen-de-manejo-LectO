@@ -17,7 +17,7 @@ namespace Examen_de_manejo_LectO
 {
     
     [Serializable]
-    class Cuestionario
+    public class Cuestionario
     {
         List<PreguntaRandomizada> preguntasExamen;
         public int cantidadPreguntas;

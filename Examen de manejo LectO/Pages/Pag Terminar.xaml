@@ -1,0 +1,85 @@
+﻿<Page x:Class="Examen_de_manejo_LectO.Pages.Pag_Terminar"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Examen_de_manejo_LectO.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="1080" d:DesignWidth="1920"
+      Title="Pag_Terminar" Background="White" FontFamily="OpenDyslexic">
+
+
+    <Grid>
+        <Grid Height="150" VerticalAlignment="Top" Background="#FF6491E9">
+            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="50">Examen de conducir</TextBlock>
+        </Grid>
+        <Grid Margin="0,150,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition Height="0.7*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.4*"/>
+                <ColumnDefinition Width="0.1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="0.1*"/>
+                <ColumnDefinition Width="0.4*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Height="auto" Width="auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Viewbox>
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock TextAlignment="Center" Margin="0,0,0,2">¿Está seguro/a que desea terminar el examen?</TextBlock>
+                        <TextBlock TextAlignment="Center" Margin="0,5,0,0">Verifique que haya ingresado sus datos correctamente.</TextBlock>
+                    </StackPanel>
+                </Viewbox>
+            </Grid>
+
+            <Viewbox Grid.Row="1" Grid.Column="2">
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Grid.ColumnSpan="1" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="28" Foreground="#FF5F5E5E">Nombre y apellido:</TextBlock>
+                        <TextBox x:Name="txtNombreApellido" Grid.Column="1" Grid.ColumnSpan="1" Height="38" FontSize="24" VerticalAlignment="Center"></TextBox>
+
+                    </Grid>
+                    <Grid Width="700" Height="120">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Grid.ColumnSpan="1" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="28" Foreground="#FF5F5E5E">Documento:</TextBlock>
+                        <TextBox x:Name="txtDocumento" Grid.Column="1" Grid.ColumnSpan="1" Height="38" FontSize="24" VerticalAlignment="Center"></TextBox>
+                    </Grid>
+                </StackPanel>
+            </Viewbox>
+            <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Button x:Name="btnTerminar" Height="100" Width="300" Background="#B2C5F5" BorderThickness="0" Cursor="Hand" FontSize="36" Click="btnTerminar_Click" Margin="0,0,30,0">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock VerticalAlignment="Center" FontSize="32" Margin="0,0,5,0">Terminar</TextBlock>
+                        <Image Source="/Examen de manejo LectO;component/Resources/Terminar.png" Margin="5,0,0,0" Width="70" Opacity="0.7"></Image>
+                    </StackPanel>
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="7"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button x:Name="btnVolverAtras" Height="100" Width="300" Background="#FF6BDDED" BorderThickness="0" Cursor="Hand" Click="btnVolverAtras_Click" Margin="30,0,0,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Examen de manejo LectO;component/Resources/FlechaLeft.png" Margin="0,0,5,0" Width="50" Opacity="0.7"></Image>
+                        <TextBlock VerticalAlignment="Center" FontSize="32" Margin="5,0,0,0">Volver atrás</TextBlock>
+                    </StackPanel>
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="7"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>

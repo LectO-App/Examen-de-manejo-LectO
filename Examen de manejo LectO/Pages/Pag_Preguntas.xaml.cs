@@ -24,10 +24,12 @@ namespace Examen_de_manejo_LectO.Pages
     /// </summary>
     public partial class Pag_Preguntas : Page
     {
-        Cuestionario cuestionario;
+        public Cuestionario cuestionario;
         SpeechSynthesizer synth;
         static BrushConverter converter = new BrushConverter();
         int preguntaActual = 1;
+        public string nombreApellido;
+        public string documento;
         Button btnAnterior;
         Pag_Home pantallaInicial;
 
@@ -39,6 +41,8 @@ namespace Examen_de_manejo_LectO.Pages
             btnAnterior = preg1;
             cambiaPregunta(1);
             pantallaInicial = home;
+            nombreApellido = home.nombreApellido;
+            documento = home.documento;
         }
 
         // ==============
@@ -275,9 +279,13 @@ namespace Examen_de_manejo_LectO.Pages
             borderImagenPalabra.Visibility = Visibility.Hidden;
         }
 
+        // ===============
+        // TERMINAR EXAMEN
+        // ===============
+
         private void btnTerminarExamen_Click(object sender, RoutedEventArgs e)
         {
-            cuestionario.terminar(pantallaInicial.documento, pantallaInicial.nombreApellido);
+            NavigationService.Navigate(new Pag_Terminar(this));
         }
     }
 }
