@@ -24,3 +24,29 @@ C:\Users\HP PREMIUM\Desktop\LectO\Examen de manejo\Examen-de-manejo-LectO\Examen
 C:\Users\HP PREMIUM\Desktop\LectO\Examen de manejo\Examen-de-manejo-LectO\Examen de manejo LectO\obj\Debug\Pages\Pag_Home.baml
 C:\Users\HP PREMIUM\Desktop\LectO\Examen de manejo\Examen-de-manejo-LectO\Examen de manejo LectO\obj\Debug\Pages\Pag Terminar.g.cs
 C:\Users\HP PREMIUM\Desktop\LectO\Examen de manejo\Examen-de-manejo-LectO\Examen de manejo LectO\obj\Debug\Pages\Pag Terminar.baml
+C:\Users\PC\Desktop\LectO\LectO Automovilismo\Examen de manejo LectO\bin\Debug\Examen de manejo LectO.exe.config
+C:\Users\PC\Desktop\LectO\LectO Automovilismo\Examen de manejo LectO\bin\Debug\Examen de manejo LectO.exe
+C:\Users\PC\Desktop\LectO\LectO Automovilismo\Examen de manejo LectO\bin\Debug\Examen de manejo LectO.pdb
+C:\Users\PC\Desktop\LectO\LectO Automovilismo\Examen de manejo LectO\bin\Debug\LiteDB.dll
+C:\Users\PC\Desktop\LectO\LectO Automovilismo\Examen de manejo LectO\bin\Debug\Newtonsoft.Json.dll
+C:\Users\PC\Desktop\LectO\LectO Automovilismo\Examen de manejo LectO\bin\Debug\LiteDB.xml
+C:\Users\PC\Desktop\LectO\LectO Automovilismo\Examen de manejo LectO\bin\Debug\Newtonsoft.Json.xml
+C:\Users\PC\Desktop\LectO\LectO Automovilismo\Examen de manejo LectO\obj\Debug\Examen de manejo LectO.csprojAssemblyReference.cache
+C:\Users\PC\Desktop\LectO\LectO Automovilismo\Examen de manejo LectO\obj\Debug\MainWindow.baml
+C:\Users\PC\Desktop\LectO\LectO Automovilismo\Examen de manejo LectO\obj\Debug\Pages\Pag Terminar.baml
+C:\Users\PC\Desktop\LectO\LectO Automovilismo\Examen de manejo LectO\obj\Debug\Pages\Pag_Home.baml
+C:\Users\PC\Desktop\LectO\LectO Automovilismo\Examen de manejo LectO\obj\Debug\Pages\Pag_Preguntas.baml
+C:\Users\PC\Desktop\LectO\LectO Automovilismo\Examen de manejo LectO\obj\Debug\MainWindow.g.cs
+C:\Users\PC\Desktop\LectO\LectO Automovilismo\Examen de manejo LectO\obj\Debug\Pages\Pag Terminar.g.cs
+C:\Users\PC\Desktop\LectO\LectO Automovilismo\Examen de manejo LectO\obj\Debug\Pages\Pag_Home.g.cs
+C:\Users\PC\Desktop\LectO\LectO Automovilismo\Examen de manejo LectO\obj\Debug\Pages\Pag_Preguntas.g.cs
+C:\Users\PC\Desktop\LectO\LectO Automovilismo\Examen de manejo LectO\obj\Debug\App.g.cs
+C:\Users\PC\Desktop\LectO\LectO Automovilismo\Examen de manejo LectO\obj\Debug\Examen de manejo LectO_MarkupCompile.cache
+C:\Users\PC\Desktop\LectO\LectO Automovilismo\Examen de manejo LectO\obj\Debug\Examen de manejo LectO_MarkupCompile.lref
+C:\Users\PC\Desktop\LectO\LectO Automovilismo\Examen de manejo LectO\obj\Debug\Examen de manejo LectO.g.resources
+C:\Users\PC\Desktop\LectO\LectO Automovilismo\Examen de manejo LectO\obj\Debug\Examen_de_manejo_LectO.Properties.Resources.resources
+C:\Users\PC\Desktop\LectO\LectO Automovilismo\Examen de manejo LectO\obj\Debug\Examen de manejo LectO.csproj.GenerateResource.cache
+C:\Users\PC\Desktop\LectO\LectO Automovilismo\Examen de manejo LectO\obj\Debug\Examen de manejo LectO.csproj.CoreCompileInputs.cache
+C:\Users\PC\Desktop\LectO\LectO Automovilismo\Examen de manejo LectO\obj\Debug\Examen de manejo LectO.csproj.CopyComplete
+C:\Users\PC\Desktop\LectO\LectO Automovilismo\Examen de manejo LectO\obj\Debug\Examen de manejo LectO.exe
+C:\Users\PC\Desktop\LectO\LectO Automovilismo\Examen de manejo LectO\obj\Debug\Examen de manejo LectO.pdb

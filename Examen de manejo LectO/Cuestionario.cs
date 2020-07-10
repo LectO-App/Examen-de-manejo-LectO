@@ -6,7 +6,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 using Newtonsoft.Json;
-using LiteDB;
 using System.Net.Cache;
 using System.Net;
 using System.Net.Http;
@@ -52,7 +51,7 @@ namespace Examen_de_manejo_LectO
 
                 preguntasExamen.Add(new PreguntaRandomizada
                 {
-                    pregunta = elemento.textoPregunta,
+                    pregunta = elemento.txtPregunta,
                     opciones = temp,
                     imagen = elemento.imagen
                 });
@@ -180,9 +179,9 @@ namespace Examen_de_manejo_LectO
                                 stream.Flush();
                                 stream.Close();
                             }
-                        }
 
-                        if (pregunta.textoPregunta == null) pregunta.textoPregunta = "¿?";
+                            if (pregunta.txtPregunta == null) pregunta.txtPregunta = "¿?";
+                        }
                     }
                 }
 

@@ -11,7 +11,7 @@ namespace Examen_de_manejo_LectO
     public class Pregunta
     {
         public int id { get; set; }
-        public string textoPregunta { get; set; }
+        public string txtPregunta { get; set; }
         public string imagen { get; set; }
         public string respuestaCorrecta { get; set; }
         public string opcion1 { get; set; }
