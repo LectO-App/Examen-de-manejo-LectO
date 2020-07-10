@@ -61,17 +61,18 @@ namespace Examen_de_manejo_LectO
 
     public static class Shuffle
     {
+        private static Random random = new Random();
+
         public static void List<T> (ref List<T> lista)
         {
-            int n = lista.Count();
-            Random random = new Random();
-
-            for (int i = 0; i < n; i++)
+            int n = lista.Count;
+            while (n > 1)
             {
-                int change = random.Next(n);
-                T value = lista[i];
-                lista[i] = lista[change];
-                lista[change] = value;
+                n--;
+                int k = random.Next(n + 1);
+                T value = lista[k];
+                lista[k] = lista[n];
+                lista[n] = value;
             }
         }
     }

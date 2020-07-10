@@ -218,7 +218,7 @@
                             </Button.Resources>
                         </Button>
 
-                        <Button x:Name="preg15" MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Margin="5,0,0,0" Style="{StaticResource btnPreguntas}" BorderThickness="0" Click="cambiaDePregunta_Click">
+                        <Button x:Name="preg15" MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Margin="5,0,0,0" Style="{StaticResource btnPreguntas}" Cursor="Hand" BorderThickness="0" Click="cambiaDePregunta_Click">
                             <TextBlock Foreground="#5F5F5F" FontSize="30" Text="15" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             <Button.Effect>
                                 <DropShadowEffect BlurRadius="4" ShadowDepth="4" Direction="270" Opacity="0.35" RenderingBias="Quality"/>
@@ -400,7 +400,7 @@
                             </Button.Resources>
                         </Button>
 
-                        <Button x:Name="preg30" MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Margin="5,0,0,0" Style="{StaticResource btnPreguntas}" BorderThickness="0" Click="cambiaDePregunta_Click">
+                        <Button x:Name="preg30" MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Margin="5,0,0,0" Style="{StaticResource btnPreguntas}" Cursor="Hand" BorderThickness="0" Click="cambiaDePregunta_Click">
                             <TextBlock Foreground="#5F5F5F" FontSize="30" Text="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             <Button.Effect>
                                 <DropShadowEffect BlurRadius="4" ShadowDepth="4" Direction="270" Opacity="0.35" RenderingBias="Quality"/>

@@ -124,7 +124,6 @@ namespace Examen_de_manejo_LectO.Pages
 
             cuestionario.pregunta(numeroPregunta, ref imagen, ref respondida, ref listaPreguntas);
             Uri resourceUri = new Uri(imagen);
-            MessageBox.Show(resourceUri.AbsoluteUri);
             imgPregunta.Source = new BitmapImage(resourceUri);
 
 

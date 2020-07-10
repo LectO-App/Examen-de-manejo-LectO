@@ -23,7 +23,6 @@ namespace Examen_de_manejo_LectO
 
         public Cuestionario()
         {
-            Task.Run(UpdateDB).Wait();
             preguntasExamen = new List<PreguntaRandomizada>();
 
             string str = File.ReadAllText("db.json");

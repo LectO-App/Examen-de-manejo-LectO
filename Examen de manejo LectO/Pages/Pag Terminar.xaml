@@ -57,10 +57,10 @@
                 </StackPanel>
             </Viewbox>
             <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-                <Button x:Name="btnTerminar" Height="100" Width="300" Background="#B2C5F5" BorderThickness="0" Cursor="Hand" FontSize="36" Click="btnTerminar_Click" Margin="0,0,30,0">
+                <Button x:Name="btnVolverAtras" Height="100" Width="300" Background="#FF6BDDED" BorderThickness="0" Cursor="Hand" Click="btnVolverAtras_Click" Margin="0,0,30,0">
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock VerticalAlignment="Center" FontSize="32" Margin="0,0,5,0">Terminar</TextBlock>
-                        <Image Source="/Examen de manejo LectO;component/Resources/Terminar.png" Margin="5,0,0,0" Width="70" Opacity="0.7"></Image>
+                        <Image Source="/Examen de manejo LectO;component/Resources/FlechaLeft.png" Margin="0,0,5,0" Width="50" Opacity="0.7"></Image>
+                        <TextBlock VerticalAlignment="Center" FontSize="32" Margin="5,0,0,0">Volver atrás</TextBlock>
                     </StackPanel>
                     <Button.Resources>
                         <Style TargetType="Border">
@@ -68,10 +68,10 @@
                         </Style>
                     </Button.Resources>
                 </Button>
-                <Button x:Name="btnVolverAtras" Height="100" Width="300" Background="#FF6BDDED" BorderThickness="0" Cursor="Hand" Click="btnVolverAtras_Click" Margin="30,0,0,0">
+                <Button x:Name="btnTerminar" Height="100" Width="300" Background="#B2C5F5" BorderThickness="0" Cursor="Hand" FontSize="36" Click="btnTerminar_Click" Margin="30,0,0,0">
                     <StackPanel Orientation="Horizontal">
-                        <Image Source="/Examen de manejo LectO;component/Resources/FlechaLeft.png" Margin="0,0,5,0" Width="50" Opacity="0.7"></Image>
-                        <TextBlock VerticalAlignment="Center" FontSize="32" Margin="5,0,0,0">Volver atrás</TextBlock>
+                        <TextBlock VerticalAlignment="Center" FontSize="32" Margin="0,0,5,0">Terminar</TextBlock>
+                        <Image Source="/Examen de manejo LectO;component/Resources/Terminar.png" Margin="5,0,0,0" Width="70" Opacity="0.7"></Image>
                     </StackPanel>
                     <Button.Resources>
                         <Style TargetType="Border">

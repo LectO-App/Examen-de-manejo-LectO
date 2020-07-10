@@ -26,6 +26,7 @@ namespace Examen_de_manejo_LectO.Pages
         public Pag_Home()
         {
             InitializeComponent();
+            Task.Run(Cuestionario.UpdateDB).Wait();
         }
 
         private void btnEmpezar_Click(object sender, RoutedEventArgs e)
