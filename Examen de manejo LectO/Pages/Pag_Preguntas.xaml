@@ -45,7 +45,7 @@
             <Image x:Name="imagenPalabra" Source="/Resources/blanco.jpg" MouseEnter="imagenPalabra_MouseEnter"></Image>
         </Border>
 
-        <Grid x:Name="gridSuperior" Height="150" VerticalAlignment="Top">
+        <Grid x:Name="gridSuperior" Height="150" VerticalAlignment="Top" UseLayoutRounding="True">
             <Viewbox HorizontalAlignment="Center">
                 <StackPanel Orientation="Vertical" Margin="30,10,30,10">
 

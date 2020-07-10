@@ -49,6 +49,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\logoletra.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="LiteDB, Version=5.0.8.0, Culture=neutral, PublicKeyToken=4ee40123013c9f27, processorArchitecture=MSIL">
       <HintPath>packages\LiteDB.5.0.8\lib\net45\LiteDB.dll</HintPath>
@@ -188,6 +191,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Terminar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo ico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoletra.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

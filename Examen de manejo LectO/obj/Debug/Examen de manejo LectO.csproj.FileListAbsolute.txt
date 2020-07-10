@@ -50,3 +50,29 @@ C:\Users\PC\Desktop\LectO\LectO Automovilismo\Examen de manejo LectO\obj\Debug\E
 C:\Users\PC\Desktop\LectO\LectO Automovilismo\Examen de manejo LectO\obj\Debug\Examen de manejo LectO.csproj.CopyComplete
 C:\Users\PC\Desktop\LectO\LectO Automovilismo\Examen de manejo LectO\obj\Debug\Examen de manejo LectO.exe
 C:\Users\PC\Desktop\LectO\LectO Automovilismo\Examen de manejo LectO\obj\Debug\Examen de manejo LectO.pdb
+C:\Users\faust\Desktop\Examen-de-manejo-LectO\Examen de manejo LectO\obj\Debug\Examen de manejo LectO.csprojAssemblyReference.cache
+C:\Users\faust\Desktop\Examen-de-manejo-LectO\Examen de manejo LectO\obj\Debug\Examen de manejo LectO.exe
+C:\Users\faust\Desktop\Examen-de-manejo-LectO\Examen de manejo LectO\obj\Debug\Examen de manejo LectO.pdb
+C:\Users\faust\Desktop\Examen-de-manejo-LectO\Examen de manejo LectO\bin\Debug\Examen de manejo LectO.exe.config
+C:\Users\faust\Desktop\Examen-de-manejo-LectO\Examen de manejo LectO\bin\Debug\Examen de manejo LectO.exe
+C:\Users\faust\Desktop\Examen-de-manejo-LectO\Examen de manejo LectO\bin\Debug\Examen de manejo LectO.pdb
+C:\Users\faust\Desktop\Examen-de-manejo-LectO\Examen de manejo LectO\bin\Debug\LiteDB.dll
+C:\Users\faust\Desktop\Examen-de-manejo-LectO\Examen de manejo LectO\bin\Debug\Newtonsoft.Json.dll
+C:\Users\faust\Desktop\Examen-de-manejo-LectO\Examen de manejo LectO\bin\Debug\LiteDB.xml
+C:\Users\faust\Desktop\Examen-de-manejo-LectO\Examen de manejo LectO\bin\Debug\Newtonsoft.Json.xml
+C:\Users\faust\Desktop\Examen-de-manejo-LectO\Examen de manejo LectO\obj\Debug\MainWindow.g.cs
+C:\Users\faust\Desktop\Examen-de-manejo-LectO\Examen de manejo LectO\obj\Debug\Pages\Pag Terminar.g.cs
+C:\Users\faust\Desktop\Examen-de-manejo-LectO\Examen de manejo LectO\obj\Debug\Pages\Pag_Home.g.cs
+C:\Users\faust\Desktop\Examen-de-manejo-LectO\Examen de manejo LectO\obj\Debug\Pages\Pag_Preguntas.g.cs
+C:\Users\faust\Desktop\Examen-de-manejo-LectO\Examen de manejo LectO\obj\Debug\App.g.cs
+C:\Users\faust\Desktop\Examen-de-manejo-LectO\Examen de manejo LectO\obj\Debug\Examen de manejo LectO_MarkupCompile.cache
+C:\Users\faust\Desktop\Examen-de-manejo-LectO\Examen de manejo LectO\obj\Debug\Examen de manejo LectO_MarkupCompile.lref
+C:\Users\faust\Desktop\Examen-de-manejo-LectO\Examen de manejo LectO\obj\Debug\MainWindow.baml
+C:\Users\faust\Desktop\Examen-de-manejo-LectO\Examen de manejo LectO\obj\Debug\Pages\Pag Terminar.baml
+C:\Users\faust\Desktop\Examen-de-manejo-LectO\Examen de manejo LectO\obj\Debug\Pages\Pag_Home.baml
+C:\Users\faust\Desktop\Examen-de-manejo-LectO\Examen de manejo LectO\obj\Debug\Pages\Pag_Preguntas.baml
+C:\Users\faust\Desktop\Examen-de-manejo-LectO\Examen de manejo LectO\obj\Debug\Examen de manejo LectO.g.resources
+C:\Users\faust\Desktop\Examen-de-manejo-LectO\Examen de manejo LectO\obj\Debug\Examen_de_manejo_LectO.Properties.Resources.resources
+C:\Users\faust\Desktop\Examen-de-manejo-LectO\Examen de manejo LectO\obj\Debug\Examen de manejo LectO.csproj.GenerateResource.cache
+C:\Users\faust\Desktop\Examen-de-manejo-LectO\Examen de manejo LectO\obj\Debug\Examen de manejo LectO.csproj.CoreCompileInputs.cache
+C:\Users\faust\Desktop\Examen-de-manejo-LectO\Examen de manejo LectO\obj\Debug\Examen de manejo LectO.csproj.CopyComplete
