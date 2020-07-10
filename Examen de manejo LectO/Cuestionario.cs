@@ -58,51 +58,17 @@ namespace Examen_de_manejo_LectO
             }
         }
 
-        /*
-        public void pregunta(int numeroPregunta, ref string rutaImagen, ref int respondida, ref List<string> listaPregunta)
+        public void pregunta(int numeroPregunta, ref string imagen, ref int respondida, ref List<string> listaPregunta)
         {
             numeroPregunta--;
             if (!(numeroPregunta >= 0 && numeroPregunta < cantidadPreguntas)) throw new Exception("No existe esta pregunta. Asegúrate de ingresar un valor entre 1 y la cantidad de preguntas.");
 
             PreguntaRandomizada estaPregunta = preguntasExamen[numeroPregunta];
 
-            rutaImagen = "Images/" + estaPregunta.imagen + ".png";
             respondida = estaPregunta.respondido;
 
-            listaPregunta = new List<string>();
-            listaPregunta.Add(estaPregunta.pregunta);
-
-            foreach (var g in estaPregunta.opciones) listaPregunta.Add(g.texto);
-        }
-
-        LA DE ULI
-
-        public void pregunta(int numeroPregunta, ref Bitmap imagen, ref int respondida, ref List<string> listaPregunta)
-        {
-            numeroPregunta--;
-            if (!(numeroPregunta >= 0 && numeroPregunta < cantidadPreguntas)) throw new Exception("No existe esta pregunta. Asegúrate de ingresar un valor entre 1 y la cantidad de preguntas.");
-
-            PreguntaRandomizada estaPregunta = preguntasExamen[numeroPregunta];
-
-            imagen = new Bitmap("Images/" + estaPregunta.imagen + ".png");
-            respondida = estaPregunta.respondido;
-
-            listaPregunta = new List<string>();
-            listaPregunta.Add(estaPregunta.pregunta);
-
-            foreach (var g in estaPregunta.opciones) listaPregunta.Add(g.texto);
-        }
-        */
-
-        public void pregunta(int numeroPregunta, ref BitmapImage imagen, ref int respondida, ref List<string> listaPregunta)
-        {
-            numeroPregunta--;
-            if (!(numeroPregunta >= 0 && numeroPregunta < cantidadPreguntas)) throw new Exception("No existe esta pregunta. Asegúrate de ingresar un valor entre 1 y la cantidad de preguntas.");
-
-            PreguntaRandomizada estaPregunta = preguntasExamen[numeroPregunta];
-
-            imagen = new BitmapImage(new Uri("Images/" + estaPregunta.imagen + ".png", UriKind.Relative));
-            respondida = estaPregunta.respondido;
+            imagen = "Images/" + estaPregunta.imagen + ".png";
+            imagen = Path.GetFullPath(imagen);
 
             listaPregunta = new List<string>();
             listaPregunta.Add(estaPregunta.pregunta);
@@ -194,64 +160,3 @@ namespace Examen_de_manejo_LectO
         }
     }
 }
-
-/* 
-static LiteDatabase db = new LiteDatabase("Filename=database.db; Mode=Exclusive");
-static ILiteCollection<DB> preguntas = db.GetCollection<DB>("preguntas");
- public static void AgregarPregunta (string pregunta, string respuestaCorrecta, string opcion1, string opcion2, string direccionImagen)
-{
-    Bitmap bitmap = new Bitmap(direccionImagen);
-
-    if (!Directory.Exists("Imagenes")) Directory.CreateDirectory("Imagenes");
-
-    int i = 0; for (; File.Exists("Imagenes/" + i + ".png"); i++) continue;
-
-    string idImagen = "Imagenes/" + i + ".png";
-    bitmap.Save(idImagen);
-
-    Pregunta agregar = new Pregunta
-    {
-        TextoPregunta = pregunta,
-        Imagen = idImagen,
-        RespuestaCorrecta = respuestaCorrecta,
-        Opcion1 = opcion1,
-        Opcion2 = opcion2
-    };
-
-    string id = preguntas.Insert(agregar);
-} 
-
-public Cuestionario(int cantidad = 30)
-{
-    cantidadPreguntas = cantidad;
-
-    preguntasExamen = new List<PreguntaRandomizada>();
-    List<Pregunta> todasPreguntas = preguntas.FindAll().ToList();
-            
-    Shuffle.List(ref todasPreguntas);
-
-    for (int i = 0, index = 0; i < cantidad; i++)
-    {
-        PreguntaRandomizada actual = new PreguntaRandomizada();
-        Pregunta elemento = todasPreguntas[index];
-
-        List <Opcion> temp = new List<Opcion>()
-        {
-            new Opcion {texto = elemento.respuestaCorrecta, esCorrecto = true},
-            new Opcion {texto = elemento.opcion1, esCorrecto = false},
-            new Opcion {texto = elemento.opcion2, esCorrecto = false},
-        };
-
-        Shuffle.List(ref temp);
-
-        preguntasExamen.Add(new PreguntaRandomizada
-        {
-            pregunta = elemento.textoPregunta,
-            opciones = temp,
-            imagen = elemento.imagen
-        });
-
-        index++;
-        if (index == todasPreguntas.Count) index = 0;
-    }
-}*/

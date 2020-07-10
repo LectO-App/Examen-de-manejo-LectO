@@ -118,11 +118,15 @@ namespace Examen_de_manejo_LectO.Pages
         {
             preguntaActual = numeroPregunta;
 
-            BitmapImage imagen = new BitmapImage();
+            string imagen = "";
             int respondida = 0;
             List<string> listaPreguntas = new List<string>();
 
             cuestionario.pregunta(numeroPregunta, ref imagen, ref respondida, ref listaPreguntas);
+            Uri resourceUri = new Uri(imagen);
+            MessageBox.Show(resourceUri.AbsoluteUri);
+            imgPregunta.Source = new BitmapImage(resourceUri);
+
 
             textBoxPregunta.Document.Blocks.Clear();
             textBoxPregunta.Document.Blocks.Add(new Paragraph(new Run(listaPreguntas[0])));
@@ -154,8 +158,6 @@ namespace Examen_de_manejo_LectO.Pages
                     btnC.Background = colorSeleccionado;
                     break;
             }
-
-            imgPregunta.Source = imagen;
         }
 
         System.Windows.Media.Brush colorBotonSeleccionado = (System.Windows.Media.Brush)converter.ConvertFromString("#FF56FFF7");
